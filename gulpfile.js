@@ -71,6 +71,7 @@ gulp.task('sass', function () {
 }); // инструкция, задача
 gulp.task('css-libs',['sass'], function(){
 	return gulp.src(['app/css/mystyle.css',])
+	//return gulp.src(['app/**/*.css',])
 				.pipe(cssnano())
 				.pipe(rename({suffix:'.min'}))
 				.pipe(gulp.dest('app/css'))
@@ -78,6 +79,7 @@ gulp.task('css-libs',['sass'], function(){
 });
 gulp.task('watch', ['css-libs', 'js', 'browser-sync'], function() {
 	gulp.watch('app/scss/**/*.scss', ['css-libs']);
+	gulp.watch('app/**/**/**/*.css').on('change', browserSync.reload);;
 	gulp.watch(['app/script/**/*.js', 'app/script/common.min.js'], ['js']);
 	//gulp.watch('500303_GULP/*.php', browserSync.reload);
 	gulp.watch('app/**/*.php').on('change', browserSync.reload);

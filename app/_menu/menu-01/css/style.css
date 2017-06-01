@@ -1,0 +1,89 @@
+
+@font-face {
+  font-family: "fira";
+  src: url('../fonts/') format('embedded-opentype'),
+  url('../fonts/') format('woff2'),
+  url('../fonts/') format('woff'),
+  url('../fonts/FiraSans-Regular.ttf') format('truetype'),
+  url('../fonts/') format('svg');
+
+}
+/*
+*Menu*
+*/
+.menu *{
+  padding: 0;
+  margin: 0;
+}
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: "fira";
+  }
+  header {
+    margin-top: 200px;
+  }
+  .menu ul, .menu li{
+  list-style: none;
+  }
+  .menu>ul{
+    display: flex;
+    justify-content: center;
+  }
+  .menu>ul li a{
+    display: block;
+    padding: 15px 30px 15px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;background: rgb(226,226,226); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+    transition: all 0.3s;
+  }
+  .menu > ul li{
+    position: relative;
+    border-right: 1px solid #c7c8ca;
+  }
+  .menu >ul li > a i.fa{
+    position: absolute;
+    left: 12px;
+    top:16px;
+    font-size: 18px;
+  }
+.menu> ul li:first-child{
+  border-left: 1px solid #666;
+}
+.menu> ul li:last-child{
+  border-right: 1px solid #666;
+}
+.menu> ul li a:hover{
+  background: #454547;
+  color: #fff;
+  box-shadow: 1px 5px 10px -5px black;
+}
+/*
+*Sub menu
+*/
+.menu li ul{
+  position: absolute;
+  min-width: 150px;
+  display: none;
+}
+.menu li>ul li{
+  border: 1px solid #666;
+}
+.menu li>ul li a{
+  padding: 10px;
+  text-transform: none;
+  background: #e4e4e5;
+}
+.menu li ul li ul{
+  position: absolute;
+  right: -150px;
+  top:0;
+}
+.menu li:hover>ul{
+  display: block;
+}
