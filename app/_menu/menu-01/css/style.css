@@ -1,144 +1,193 @@
-
 @font-face {
-  font-family: "fira";
-  src: url('../fonts/') format('embedded-opentype'),
-  url('../fonts/') format('woff2'),
-  url('../fonts/') format('woff'),
-  url('../fonts/FiraSans-Regular.ttf') format('truetype'),
-  url('../fonts/') format('svg');
+    font-family: "fira";
+    src: url('../fonts/') format('embedded-opentype'),
+    url('../fonts/') format('woff2'),
+    url('../fonts/') format('woff'),
+    url('../fonts/FiraSans-Regular.ttf') format('truetype'),
+    url('../fonts/') format('svg');
 
 }
+
 /*
 *Menu*
 */
-.menu *{
-  padding: 0;
-  margin: 0;
+.menu * {
+    padding: 0;
+    margin: 0;
 }
-  body {
+
+body {
     padding: 0;
     margin: 0;
     font-family: "fira";
     box-sizing: border-box;
     border-collapse: collapse;
-  }
-  header {
+}
+
+header {
     /*margin-top: 200px;*/
-  }
-  .menu ul, .menu li{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  }
-  .menu>ul{
+}
+
+.menu ul, .menu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu > ul {
     display: flex;
     justify-content: center;
-  }
-  .menu>ul li a{
+}
+
+.menu > ul li a {
     display: block;
     padding: 15px 30px 15px 40px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #000;background: rgb(226,226,226); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+    color: #000;
+    background: rgb(226, 226, 226); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0); /* IE6-9 */
     transition: all 0.3s;
-  }
-  .menu > ul li{
+}
+
+.menu > ul li {
     position: relative;
     border-right: 1px solid #c7c8ca;
-  }
-  .menu >ul li > a i.fa{
+}
+
+.menu > ul li > a i.fa {
     position: absolute;
     left: 12px;
-    top:16px;
+    top: 16px;
     font-size: 18px;
-  }
-.menu> ul>li:first-child{
-  border-left: 1px solid #666;
 }
-.menu> ul>li:last-child{
-  border-right: 1px solid #666;
+
+.menu > ul > li:first-child {
+    border-left: 1px solid #666;
 }
-.menu> ul li a:hover{
-  background: #454547;
-  color: #fff;
-  box-shadow: 1px 5px 10px -5px black;
+
+.menu > ul > li:last-child {
+    border-right: 1px solid #666;
 }
+
+.menu > ul li a:hover {
+    background: #454547;
+    color: #fff;
+    box-shadow: 1px 5px 10px -5px black;
+}
+
 /*
 *Sub menu
 */
-.menu li ul{
-  position: absolute;
-  min-width: 150px;
-  display: none;
-}
-.menu li>ul li{
-  border-bottom: 1px solid #666;
-}
-.menu li>ul li a{
-  padding: 10px;
-  text-transform: none;
-  background: #e4e4e5;
-}
-.menu li ul li ul{
-  position: absolute;
-  right: -150px;
-  top:0;
-}
-.menu li:hover>ul{
-  display: block;
-}
-.menu [type="checkbox"],
-.menu label.submenu__toggle{
-  display: none;
-}
-.menu label.menu__toggle{
-  background: #c9c9c9;
-  display: none;
-  padding: 15px 40px;
-  text-transform: uppercase;
-  font-size: 14px;
-  cursor: pointer;
-  position: relative;
-}
-.menu label.menu__toggle .fa{
-  position: absolute;
-  left:15px;
-}
-@media all and (max-width:960px){
-  .menu{
-    overflow: hidden;
-    flex-direction: column;
-  }
-  .menu ul{
-    display: none;
-  }
-
-  .menu label.menu__toggle{
-    display: block;
-  }
-  input.menu__toggle:checked + label.menu__toggle{
-    background: #000;
-    color: #fff;
-  }
-  input.menu__toggle:checked ~ ul,
-  input.submenu__toggle:checked ~ ul{
-    display: block;
-  }
-  .menu label.submenu__toggle{
+.menu li ul {
     position: absolute;
+    min-width: 150px;
+    display: none;
+}
+
+.menu li > ul li {
+    border-bottom: 1px solid #666;
+}
+
+.menu li > ul li a {
+    padding: 10px;
+    text-transform: none;
+    background: #e4e4e5;
+}
+
+.menu li ul li ul {
+    position: absolute;
+    right: -150px;
     top: 0;
-    left: 0;
+}
+
+.menu li:hover > ul {
     display: block;
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
+}
+
+.menu [type="checkbox"],
+.menu label.submenu__toggle {
+    display: none;
+}
+
+.menu label.menu__toggle { background: rgb(226, 226, 226); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0); /* IE6-9 */
+
+    display: none;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    font-size: 14px;
     cursor: pointer;
-  }
-  input.submenu__toggle:checked ~ a{
-    background-color: #454547;
-  }
+    position: relative;
+}
+
+.menu label.menu__toggle .fa {
+    position: absolute;
+    left: 15px;
+}
+
+@media all and (max-width: 960px) {
+    .menu {
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    .menu ul {
+        display: block;
+        max-height: 0;
+       transition: max-height 0.5s;
+    }
+
+    .menu label.menu__toggle {
+        display: block;
+    }
+
+    input.menu__toggle:checked + label.menu__toggle {
+        background: #000;
+        color: #fff;
+    }
+
+
+    input.menu__toggle:checked ~ ul,
+    input.submenu__toggle:checked ~ ul {
+        display: block;
+        position: relative;
+        right: 0;
+        max-height: 5000px;
+     transition: max-height 2.5s;
+    }
+    .menu label.submenu__toggle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    input.submenu__toggle:checked ~ a {
+        background: #454547;
+        color: #fff;
+        border: 1px solid black;
+    }
+
+    .menu label.submenu__toggle .fa:before {
+        content: "\f0d7";
+        position: absolute;
+        font-size: 18px;
+        right: 15px;
+    }
+
+    .menu input.submenu__toggle:checked ~ label.submenu__toggle .fa:before {
+        content: "\f0d8";
+        color: #fff;
+    }
+
 }
