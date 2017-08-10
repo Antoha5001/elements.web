@@ -8,10 +8,16 @@
 </head>
 <body>
 <form action="" method="post" id="form">
-  Я даю согласие на обработку моих персональных данных <input type="checkbox" name="assent" value="123">
+  Я даю согласие на обработку моих персональных данных <input type="checkbox" name="assent" value="assent">
 </form>
 <script>
   var form = document.getElementById('form');
+  if(form.assent){
+    console.log(form.assent.value);
+  } else {
+    console.log("456");
+  }
+  console.log(form.name);
 </script>
 </body>
 </html>
