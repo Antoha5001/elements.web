@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-<form action="" method="post" id="form">
-  Я даю согласие на обработку моих персональных данных <input type="checkbox" name="assent" value="assent">
+<form action="" method="post" name="form" id="form">
+    <label for="name">Имя:</label>
+    <input type="text" name="name" placeholder="Имя" id="name"/><br/><br/>
+    <label for="password">Пароль:</label>
+    <input type="text" name="password" placeholder="Пароль" id="password"/><br/><br/>
+    <label for="email">Email:</label>
+    <input type="text" name="email" placeholder="Email" id="email"/><br/><br/>
+    <input type="checkbox" name="assent" id="assent"/>
+    <label for="assent">Я даю согласие на обработку моих персональных данных </label><br/><br/>
+    <input type="button" name="submit" value="Отправить" onclick="valid()"/>
 </form>
 <script>
-  var form = document.getElementById('form');
-  if(form.assent){
-    console.log(form.assent.value);
-  } else {
-    console.log("456");
-  }
-  console.log(form.name);
+    "use strict";
+
+    var form = document.getElementById('form');
+
+    function valid() {
+
+        var name = form.name.value,
+            password = form.password.value,
+            email = form.email.value,
+            assent = form.assent.checked,
+            fail = false,
+            addrPattern = /[0-9a-z_-]+@[0-9a-z_-]+\.[a-z]{2,5}/i;
+
+        if (name === "" || name === " ") {
+            fail = "Вы не ввели имя!";
+        } else if (password === "" || password === " ") {
+            fail = "Вы не ввели пароль!";
+        } else if (addrPattern.test(email) == false) {
+            fail = "Вы не ввели email!";
+        } else if(!assent){
+            fail = "Вы не дали своё согласие!";
+        }
+
+        if (fail) {
+            alert(fail);
+        }
+    }
+
+    // alert("Заполнены не все поля!");
+
+    //form.ons
 </script>
 </body>
 </html>
