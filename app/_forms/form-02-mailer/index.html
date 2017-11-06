@@ -3,18 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Title</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form class="form-box__form validate" action="script/form.php" method="post" id="top_form">
+<form class="form-box__form validate" method="post" id="top_form">
 	<p class="form-box__zagolovok">Закажите звонок!</p>
 	<p class="form-box__podzagolovok">Отправте свой номер телефона и наш менеджер свяжится с Вами в
 		ближайшее время. </p>
-	<span class="form-box__input-name">Введите Ваше имя</span>
-	<input class="form-box__input" type="text" placeholder="" name="name" required>
-	<span class="form-box__input-name">Номер телефона</span>
-	<input class="form-box__input" type="tel" placeholder="+7" name="phone" required>
-	<!-- <input class="form-box__input" type="text" name="coments" value="коментарий">-->
-	<input class="form-box__submit" type="submit" value="Заказать звонок!" name="submit">
+
+	<div class="form-box__input-wrapper">
+		<label for="top_form_name" class="form-box__input-name">Введите Ваше имя</label>
+		<input class="form-box__input" type="text" placeholder="" name="name" id="top_form_name"
+				 data-error="Не верный формат записи!">
+		<div class="message"></div>
+	</div>
+	<div class="form-box__input-wrapper error">
+		<label for="top_form_phone" class="form-box__input-name">Номер телефона</label>
+		<input class="form-box__input" type="tel" placeholder="+7" name="phone" id="top_form_phone" data-error="">
+		<div class="message">Ошибка</div>
+	</div>
+	<button type="submit">Заказать звонок!</button>
 </form>
 <script src="script.js"></script>
 </body>
