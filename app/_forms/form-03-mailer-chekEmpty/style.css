@@ -1,0 +1,46 @@
+
+.form-box__input-wrapper{
+	padding: 5px;
+}
+
+.form-box__input-wrapper.error input{
+	border: 2px solid red;
+}
+
+.form-box__input-wrapper.error .message{
+	color: red;
+}
+
+.message{
+	opacity: 0;
+}
+
+.error .message{
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

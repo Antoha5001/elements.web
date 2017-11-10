@@ -46,7 +46,7 @@
 
 		this.form = document.getElementById(settings.formId);
 		this.submit = this.form.getElementsByTagName('button')[0];
-		this.inputs = this.form.elements;
+		this.inputs = this.form.getElementsByTagName('input');
 
 		this.chekIt = function(el, myVar) {
 			if(!el) return false;
@@ -63,25 +63,26 @@
 
 			this.inputs[i].addEventListener('change',function () {
 				var parent = this.parentNode;
-				if(!rulesPattern[this.name].test(this.value) || this.value === "" || this.value === undefined){
-					console.log("Значение"+this.value);
-					parent.classList.add('error');
+				if (this.value === "" || this.value === undefined){
+					this.parentNode.classList.add('error');
 					return false;
-				}else{
-
-					parent.classList.remove('error');
-					console.log(this.value);
+				} else{
+					this.parentNode.classList.remove('error');
 				}
 			});
 		}
 
 		//_______________________
 
-		this.mailPost = function (name,phone) {
-			var self = this;
-			var request = new XMLHttpRequest();
+		this.mailPost = function (values) {
+			var self = this,
+				name = values.name,
+				phone = values.phone,
+				request = new XMLHttpRequest();
+
 			request.open('post','mailer.php');
 			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
 			request.onreadystatechange = function () {
 				if(request.readyState === 4){
 					self.form.name.value = "";
@@ -95,18 +96,33 @@
 
 		this.formSubmit = function () {
 
-			var self = this, name, phone;
+			var self = this;
 
 			this.submit.addEventListener('click',function (e) {
+				var values = {};
 				e.preventDefault();
 				e.stopPropagation();
-				//
-				// name = self.chekIt(this.form.name);
-				// phone = self.chekIt(this.form.phone);
-				//
-				// self.mailPost(name,phone);
 
-				console.log(phone);
+				for (var i = 0; i < self.inputs.length; i++){
+					if (self.inputs[i].value === "" || self.inputs[i].value === undefined){
+						self.inputs[i].parentNode.classList.add('error');
+						return false;
+					} else{
+						self.inputs[i].parentNode.classList.remove('error');
+						values[self.inputs[i].name] = self.inputs[i].value;
+					}
+					if(self.inputs[i].name == "agreed"){
+						if(!self.inputs[i].checked){
+							self.inputs[i].parentNode.classList.add('error');
+							return false;
+						}
+					}
+				}
+
+				//
+				self.mailPost(values);
+
+				console.log(values.agreed);
 
 			});
 		};
