@@ -1,4 +1,4 @@
-<form class="contacts-form" method="post" action="" enctype="multipart/form-data" accept-charset="UTF-8">
+<form class="contacts-form" id="contacts-form" method="post" action="" enctype="multipart/form-data" accept-charset="UTF-8">
 
 	<div class="form-title">
 		<h2>
@@ -11,40 +11,41 @@
 	</div>
 	<div class="form-inner">
 		<div class="form-row form-row-1">
-				<div class="form-col form-col-1">
-					<label class="form-legend">Как к Вам обращаться? </label>
-					<input type="text" class="custom-text" placeholder="Имя" data-error-text="Введите имя" name="name">
+			<div class="form-col form-col-1">
+				<label class="form-legend">Как к Вам обращаться? </label>
+				<input type="text" class="custom-text" placeholder="Имя" data-error-text="Введите имя" name="name">
 
-					<div class="message">
-						Необходимо указать имя
-					</div>
+				<div class="message">
+					Необходимо указать имя
 				</div>
-				<div class="form-col form-col-2">
-					<label class="form-legend">Телефон</label>
-					<input type="text" class="custom-text custom-text-phone " placeholder="" data-error-text="Введите телефон" name="phone">
+			</div>
+			<div class="form-col form-col-2">
+				<label class="form-legend">Телефон</label>
+				<input type="text" class="custom-text custom-text-phone " placeholder="" data-error-text="Введите телефон"
+						 name="phone">
 
-					<div class="message">
-						Необходимо ввести телефон
-					</div>
+				<div class="message">
+					Необходимо ввести телефон
 				</div>
+			</div>
 		</div>
 		<div class="form-row form-row-1">
 
-				<div class="form-col form-col-1">
-					<label class="form-legend">E-mail </label>
-					<input type="text" class="custom-text" placeholder="" data-error-text="Введите e-mail" name="email">
+			<div class="form-col form-col-1">
+				<label class="form-legend">E-mail </label>
+				<input type="text" class="custom-text" placeholder="" data-error-text="Введите e-mail" name="email">
 
-					<div class="message">
-						Необходимо указать e-mail
-					</div>
+				<div class="message">
+					Необходимо указать e-mail
 				</div>
-				<div class="contacts-form-col contacts-form-col-2"></div>
+			</div>
+			<div class="contacts-form-col contacts-form-col-2"></div>
 
 		</div>
 		<div class="form-row form-row-2">
 			<div class="form-col form-col-full">
-			<label class="form-legend">Комментарий (необязательно) </label>
-			<textarea class="custom-text" name="comment"></textarea>
+				<label class="form-legend">Комментарий (необязательно) </label>
+				<textarea class="custom-text" name="comment"></textarea>
 			</div>
 		</div>
 		<div class="form-row">
@@ -52,11 +53,11 @@
 				<div class="filebox-button">
 					<!--<a href="" class="filebox-custom-button custom-button-gray">Прикрепить файл</a>-->
 					<input type="file" name="file" id="file">
-					<label for="file">Прикрепить файл</label>
+					<label for="file" id="label-file">Прикрепить файл</label><span></span>
 				</div>
 				<div class="filebox-output">
 					<!--<div class="filebox-output-desc">-->
-						<!--Прикрепленный файл-->
+					<!--Прикрепленный файл-->
 					<!--</div>-->
 					<a href="#" class="filebox-output-close">
 						<i class="ico ico-del"></i>
@@ -64,21 +65,32 @@
 				</div>
 			</div>
 		</div>
-		<div class="form-row form-row-3">
-				<div class="form-col form-col-1">
-					<label class="form-legend"></label>
+		<!--<div class="form-row form-row-3">-->
+			<!--<div class="form-col form-col-1">-->
+				<!--<label class="form-legend"></label>-->
 
-					<div id="main-contact-captcha" data-id="g-recaptcha-response"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeXkQYTAAAAADQUFd4O2LutIBbCQzVcgHLhMfsy&amp;co=aHR0cDovL2xlZ2lvbi5pbmZvOjgw&amp;hl=ru&amp;v=r20171031153338&amp;size=normal&amp;cb=fjw3c9e87t1c" width="304" height="78" role="presentation" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div>
-					<div class="error-mes">
-						Подтвердите, что вы не робот
-					</div>
-				</div>
-		</div>
+				<!--<div id="main-contact-captcha" data-id="g-recaptcha-response">-->
+					<!--<div style="width: 304px; height: 78px;">-->
+						<!--<div>-->
+							<!--<iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeXkQYTAAAAADQUFd4O2LutIBbCQzVcgHLhMfsy&amp;co=aHR0cDovL2xlZ2lvbi5pbmZvOjgw&amp;hl=ru&amp;v=r20171031153338&amp;size=normal&amp;cb=fjw3c9e87t1c"-->
+									  <!--width="304" height="78" role="presentation" frameborder="0" scrolling="no"-->
+									  <!--sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>-->
+						<!--</div>-->
+						<!--<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"-->
+									 <!--style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="error-mes">-->
+					<!--Подтвердите, что вы не робот-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
 		<div class="form-row form-row-3">
-				<div class="form-col form-col-1">
-					<label class="form-legend"></label>
-					<input type="submit" class="contacts-form-button custom-button custom-button-large" value="Отправить сообщение">
-				</div>
+			<div class="form-col form-col-1">
+				<label class="form-legend"></label>
+				<input type="submit" class="form-button custom-button custom-button-large"
+						 value="Отправить сообщение">
+			</div>
 		</div>
 	</div>
 </form>

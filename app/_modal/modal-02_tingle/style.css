@@ -22,16 +22,25 @@ width: 100%;
 	font-size: 15px;
 	transition: all 400ms cubic-bezier(0.25, .46, .45, .94);
 }
+.error input,.error textarea{
+	border: 1px solid red;
+}
 .form-row input[type=file]{
-	border: none;
-	padding: 15px 0;
+	border: 1px solid black;
+	padding: 0px 0;
 	position: absolute;
 	cursor: pointer;
-	opacity: 0;
+	/*opacity: 0;*/
+	display: none;
 }
 .form-row input[type=file] + label{
 	border-bottom: 1px dashed gray;
 	padding-bottom: 3px;
+	cursor: pointer;
+}
+.form-row input[type=file] + label + span{
+	display: block;
+	color: green;
 }
 .filebox{
 	padding-bottom: 12px;
@@ -79,8 +88,16 @@ width: 100%;
 .message{
 	visibility: hidden;
 }
+.error .message{
+	visibility: visible;
+	color: red;
+}
 /*Plugin*/
 
 .tingle-modal-box__content{
 	padding: 30px;
+}
+.tingle-modal-box{
+	max-width: 850px;
+	width: auto;
 }
