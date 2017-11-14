@@ -2,6 +2,7 @@
 
 	window.addEventListener('DOMContentLoaded', function () {
 
+		//Конструктор формы
 		function Validator(settings) {
 			this.form = document.getElementById(settings.id);
 			this.elements = this.form.elements;
@@ -12,7 +13,7 @@
 			this.mailPost = function(){
 				var recuest = new XMLHttpRequest();
 
-			}
+			};
 
 			//Проверяет value текущего элемента на пустую строку
 			function isEmpty(input) {
@@ -42,7 +43,7 @@
 						console.log(this.files);
 
 					});
-				};
+				}
 				if(this.elements[i].type === 'text'){
 					this.elements[i].addEventListener('change', function () {
 
@@ -87,51 +88,60 @@
 					// console.log(self.form.elements);
 
 					request.send(value);
-					modal.close();
+					modalBox.close();
 
 				});
 			};
 			this.onSubmit();
-
-
-
 		}
 
 		//Модальное окно
-		var button = document.getElementById('button');
-		var h1 = document.createElement('h1');
-		h1.innerHTML = "Cвяжитесь с нами";
-		h1.classList.add('fdg');
 
-		var modal = new tingle.modal({
+		var modalBox = new tingle.modal({
 			cssClass : ["form-wrapper"]
 		});
 
-		button.addEventListener('click',function () {
-			var request = new XMLHttpRequest();
-			request.open('GET','form.html');
-			request.onreadystatechange = function (ev) {
-				if (request.readyState === 4){
-					// console.log(request.responseText);
-					modal.open();
-					modal.setContent(request.responseText);
+		//Конструктор модального окна
+		function Modal(settings) {
+			this.button = document.getElementById(settings.button);
 
-					var fileButton = document.getElementsByClassName('filebox-button')[0].firstElementChild,
-						inputFile = document.getElementsByTagName('input')[0];
+			this.button.addEventListener('click', function () {
+				var request = new XMLHttpRequest();
+				request.open('GET',settings.included);
 
-					var modalForm = new Validator({
-						id : "contacts-form",
-						submit: "form-button",
-						phpScript: "mailer.php"
-					});
+				request.onreadystatechange = function (e) {
+					if (request.readyState === 4) {
+						// console.log(request.responseText);
+						modalBox.open();
+						modalBox.setContent(request.responseText);
+
+						var inputModalPhone = document.getElementById('modal-form_phone');
+						var maskPhone = new Inputmask("+7(999)999-99-99");
+						maskPhone.mask(inputModalPhone);
+
+						//Инициализация формы
+						var modalForm = new Validator({
+							id: "contacts-form",
+							submit: "form-button",
+							phpScript: "mailer.php"
+						});
+					}
+				};
+
+				request.send(null);
+			});
+		}
 
 
-				}
-			};
-			request.send('');
+		var modal = new Modal({
+			button : "button",
+			included : "form-text.html"
 		});
 
 
-	});
 
+	});
+	$(function(){
+
+	});
 })();

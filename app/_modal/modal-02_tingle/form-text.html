@@ -1,0 +1,60 @@
+<form class="contacts-form" id="contacts-form" method="post" action="" enctype="multipart/form-data"
+	  accept-charset="UTF-8">
+
+	<div class="form-title">
+		<h2>
+			Cвяжитесь с нами
+		</h2>
+
+		<p>
+			Мы отвечаем на все заявки без исключения
+		</p>
+	</div>
+	<div class="form-inner">
+		<div class="form-row">
+			<div class="form-col form-col-1">
+				<label class="form-legend">Как к Вам обращаться? </label>
+				<input type="text" class="custom-text" placeholder="Имя" data-error-text="Введите имя" name="name">
+
+				<div class="message">
+					Необходимо указать имя
+				</div>
+			</div>
+			<div class="form-col">
+				<label class="form-legend">Телефон</label>
+				<input type="text" class="custom-text custom-text-phone " placeholder="например +7(495)123-45-67"
+					   data-error-text="Введите телефон"
+					   name="phone" id="modal-form_phone">
+
+				<div class="message">
+					Необходимо ввести телефон
+				</div>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-col form-col-1">
+				<label class="form-legend">E-mail </label>
+				<input type="text" class="custom-text" placeholder="" data-error-text="Введите e-mail" name="email">
+
+				<div class="message">
+					Необходимо указать e-mail
+				</div>
+			</div>
+			<div class="contacts-form-col contacts-form-col-2"></div>
+
+		</div>
+		<div class="form-row form-row-2">
+			<div class="form-col form-col-full">
+				<label class="form-legend">Комментарий (необязательно) </label>
+				<textarea class="custom-text" name="comment"></textarea>
+			</div>
+		</div>
+		<div class="form-row form-row-3">
+			<div class="form-col form-col-1">
+				<label class="form-legend"></label>
+				<input type="submit" class="form-button custom-button custom-button-large"
+					   value="Отправить сообщение">
+			</div>
+		</div>
+	</div>
+</form>
