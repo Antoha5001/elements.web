@@ -27,6 +27,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 $name = "";
 $phone = "";
 $email = "";
+$comment = "";
 
 
 	if(!empty($_POST['name']))
@@ -38,8 +39,11 @@ $email = "";
 	if(!empty($_POST['email'])){
 		$email = "E-mail: ".trim(strip_tags($_POST["email"]))."<br>";
 	}
+	if(!empty($_POST['comment'])){
+		$comment = "Коментарий: ".trim(strip_tags($_POST["comment"]))."<br>";
+	}
 
-	$message = "$host $name $phone $email";
+	$message = "$host $name $phone $email $comment";
 
 	$multipart = "--$boundary\r\n";
 	$multipart .= "Content-Type: text/html; charset=utf-8\r\n";
@@ -47,7 +51,7 @@ $email = "";
 	$multipart .= $message."\r\n";
 
 	//Обработка файла
-	if($_FILES['file']["name"] !== ""){
+	if($_FILES['file'] && $_FILES['file']["name"] !== ""){
 
 		$strFilesName = $_FILES["file"]["name"];
 		$strContent = chunk_split(base64_encode(file_get_contents($_FILES["file"]["tmp_name"])));
