@@ -1,12 +1,57 @@
 html, body{
+	padding: 0;
+	margin: 0;
 
 	font-family: Geneva, Arial, Helvetica, sans-serif;
 	color: #151515;
 }
+.container{
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	align-items: center;
+	/*align-content: flex-end;*/
+}
+
 .form-row{
-flex-wrap: nowrap;
+	flex-wrap: nowrap;
 	display: flex;
 	flex-direction: column;
+}
+
+.button{
+	display: block;
+	/*height: 20px;*/
+	padding: 15px 25px;
+
+	background: #ff7500;
+	border: 1px solid #b78181;
+	border-radius: 5px;
+	font-size: 15px;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.5s;
+	transition-timing-function: cubic-bezier(0.25, .46, .45, .94);
+}
+.button, .form-button{
+	background: #ff7500;
+	border: 1px solid #b78181;
+	border-radius: 5px;
+	font-size: 15px;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.5s;
+	transition-timing-function: cubic-bezier(0.25, .46, .45, .94);
+}
+.form-button{
+	padding: 15px;
+	width: 100%;
+}
+.button:hover, .form-button:hover{
+	background: #ff2725;
+}
+.button:active, .form-button:active{
+	background: #cb2826;
 }
 
 
@@ -17,7 +62,7 @@ width: 100%;
 	padding-bottom: 6px;
 	width: 100%;
 }
-.form-row input,.form-row textarea{
+.form-row input.custom-text,.form-row textarea{
 	width: 100%;
 	padding: 15px 13px 18px;
 	border-radius: 3px;
@@ -48,10 +93,10 @@ width: 100%;
 .filebox{
 	padding-bottom: 12px;
 }
-.form-row input:hover,.form-row textarea:hover{
+.form-row input.custom-text:hover,.form-row textarea:hover{
 	background: #f5ffff;
 }
-.form-row input:focus,.form-row textarea:focus{
+.form-row input.custom-text:focus,.form-row textarea:focus{
 	background: #ddffff;
 }
 
