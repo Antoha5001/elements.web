@@ -1,0 +1,32 @@
+html, body{
+	padding:0;
+	margin: 0;
+}
+.abc{
+/*border: 1px solid black;*/
+	height: 100vh;
+}
+
+.abso{
+	position: absolute;
+	top:150px;
+	width: 100%;
+}
+.rela{
+	position: relative;
+}
+.contacts{
+	position: absolute;
+	top:150px;
+	left: 150px;
+	width: 500px;
+	height: 600px;
+	background: #fff;
+	padding: 20px;
+	border-radius: 3px;
+
+}
+.contacts h3{
+	font-size: 50px;
+
+}
