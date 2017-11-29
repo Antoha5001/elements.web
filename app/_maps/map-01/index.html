@@ -5,26 +5,8 @@
 	<title>Title</title>
 </head>
 <body>
-<div class="dfg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-	Accusamus aliquid assumenda at consectetur deleniti dignissimos dolorem doloremque
-	esse exercitationem, facilis hic nesciunt quam quia quo ratione sunt, voluptate.
-	Accusantium assumenda beatae blanditiis, consectetur deserunt dignissimos dolorem
-	dolores ducimus earum in incidunt iusto laborum maiores molestias nihil perferendis
-	quibusdam quos repudiandae rerum tempora ullam, veniam voluptatibus! Minima neque, non.
-	Eum hic minus perferendis placeat possimus vitae voluptatum? Animi aspernatur, assumenda
-	commodi doloremque earum ex exercitationem fugiat harum impedit, magni pariatur sapiente
-	tempore, tenetur! Alias et itaque magni officia qui quis, voluptatum! Aut, distinctio eius.
-	Ab consectetur dolor ducimus laudantium nulla possimus repudiandae. Accusantium beatae
-	deserunt id iure modi nobis pariatur qui repudiandae voluptatibus. Consequuntur deleniti
-	dignissimos distinctio illum iure laboriosam modi obcaecati velit? Aliquam atque autem
-	blanditiis delectus dicta distinctio eius, error, ex maiores natus nesciunt nihil nobis
-	non optio quidem sunt suscipit unde voluptas voluptate voluptatum! Aliquid cupiditate dolor
-	impedit ipsa maiores nemo quasi quis, repudiandae? Accusamus adipisci alias aliquam animi
-	delectus dicta dolor ducimus eos esse et expedita explicabo fugiat inventore ipsam itaque
-	iusto maxime molestiae neque, nesciunt nisi officiis omnis perferendis perspiciatis quae
-	reiciendis repellat soluta suscipit. Aliquid dicta doloribus
-	dolorum eligendi inventore maxime odit soluta unde voluptas?</div>
-<div class="rela">
+
+<section class="google-map">
 
 	<div class="container-fluid abc" id="map">
 
@@ -44,27 +26,8 @@
 	<!--<div class="container-fluid abso">-->
 		<!--<div class="container"></div>-->
 	<!--</div>-->
-</div>
+</section>
 
-<div class="dfg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-	Accusamus aliquid assumenda at consectetur deleniti dignissimos dolorem doloremque
-	esse exercitationem, facilis hic nesciunt quam quia quo ratione sunt, voluptate.
-	Accusantium assumenda beatae blanditiis, consectetur deserunt dignissimos dolorem
-	dolores ducimus earum in incidunt iusto laborum maiores molestias nihil perferendis
-	quibusdam quos repudiandae rerum tempora ullam, veniam voluptatibus! Minima neque, non.
-	Eum hic minus perferendis placeat possimus vitae voluptatum? Animi aspernatur, assumenda
-	commodi doloremque earum ex exercitationem fugiat harum impedit, magni pariatur sapiente
-	tempore, tenetur! Alias et itaque magni officia qui quis, voluptatum! Aut, distinctio eius.
-	Ab consectetur dolor ducimus laudantium nulla possimus repudiandae. Accusantium beatae
-	deserunt id iure modi nobis pariatur qui repudiandae voluptatibus. Consequuntur deleniti
-	dignissimos distinctio illum iure laboriosam modi obcaecati velit? Aliquam atque autem
-	blanditiis delectus dicta distinctio eius, error, ex maiores natus nesciunt nihil nobis
-	non optio quidem sunt suscipit unde voluptas voluptate voluptatum! Aliquid cupiditate dolor
-	impedit ipsa maiores nemo quasi quis, repudiandae? Accusamus adipisci alias aliquam animi
-	delectus dicta dolor ducimus eos esse et expedita explicabo fugiat inventore ipsam itaque
-	iusto maxime molestiae neque, nesciunt nisi officiis omnis perferendis perspiciatis quae
-	reiciendis repellat soluta suscipit. Aliquid dicta doloribus
-	dolorum eligendi inventore maxime odit soluta unde voluptas?</div>
 <script src="script/jquery.js"></script>
 <script src="script/tether.min.js"></script>
 <script src="script/bootstrap.min.js"></script>
@@ -76,6 +39,8 @@
 		var options = {
 			zoom:17,
 		  gestureHandling: 'cooperative',
+			scrollwheel: false,
+			// mapTypeControlOptions: false,
 			 center:{
 				lat: 53.3335472,
 				lng: 83.7672569
@@ -83,19 +48,29 @@
 		};
 		var myMap = new google.maps.Map(element,options);
 
+		var icon = {
+			url:"images/map-icon.svg",
+			size: new google.maps.Size(60,80)
+
+		}
+
 		var marker = new google.maps.Marker({
 			 position : {
 			  lat: 53.333846,
 			  lng: 83.770396
 			 },
-			 map : myMap
+			 map : myMap,
+			// icon: "images/map-icon.svg"
+			icon: icon
+			// animation: google.maps.Animation.DROP
 
 		});
 
 
 
+
 		var infoWindow = new google.maps.InfoWindow({
-			 content:"<h2>Hello</h2>"
+			 content:"<h2>Медицинский центр «Жизнь»</h2>"
 		});
 
 		marker.addListener('click', function () {
