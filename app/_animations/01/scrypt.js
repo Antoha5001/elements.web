@@ -3,68 +3,66 @@
 
 	function Scroll(settings) {
 
+		//Свойства
+		this.element = settings.element;
+		this.documentHeight = document.documentElement.clientHeight;
 		var self = this;
 
-		function show() {
-			if (typeof self.element == "object") {
 
-				self.element.forEach = [].forEach;
-
-				self.element.forEach(function (e) {
-					e.classList.remove("is-visible");
-				});
-
-			} else {
-				self.element.classList.remove("is-visible")
+		//Проверяем, коллекция или нет
+		this.isCollection = function () {
+			if (this.element instanceof HTMLCollection) {
+				this.element.forEach = [].forEach;
+				return true;
 			}
-		}
-
-		function hide() {
-
-			console.log(Object.prototype.toString.call(self.element));
-			console.log(self.element instanceof Array);
-
-			// console.log(elem);
-			if (typeof self.element === "object") {
-
-				console.log(1);
-
-				self.element.forEach = [].forEach;
-				self.element.forEach(function (e) {
-					e.classList.add("is-visible");
-				});
-
-			} else {
-				console.log(self.element.classList.add("is-visible"));
-			}
-
-		}
-
-
-		this.element = settings.element;
-
-		this.documentHeight = document.documentElement.clientHeight;
-
-		this.echo = function () {
-			console.log(this.documentHeight);
+			return false;
 		};
 
-		window.addEventListener('scroll', function () {
+		//Проверяем, ниже нужной позиции или нет
+		this.isTop = function (el) {
+			if (el.offsetTop > parseInt(document.documentElement.scrollTop + self.documentHeight) - 200) {
+				return true;
+			}
+			return false;
+		};
 
-			// console.log(self.element.offsetTop);
-			// console.log(parseInt(document.documentElement.scrollTop + self.documentHeight));
+		this.event = function () {
 
-			if (self.element.offsetTop < parseInt(document.documentElement.scrollTop + self.documentHeight) - 300) {
-				hide();
+			if (this.isCollection()) {
 
-			} else {
-				show(self.element);
+				this.element.forEach(function (e) {
+
+					e.style.transition = "all 0.4s ease-out";
+
+					window.addEventListener('scroll', function () {
+						if (self.isTop(e)) {
+							hide(e);
+						} else {
+							show(e);
+						}
+
+					});
+					if(self.isTop(e)){
+						hide(e);
+					}
+				});
 
 			}
+		};
 
-		});
+		function show(el) {
+			el.classList.remove("is-invisible");
+		}
 
-		hide();
+		function hide(el) {
+
+			el.classList.add("is-invisible");
+
+		}
+
+
+		this.event();
+
 
 	}
 
