@@ -91,8 +91,8 @@
 							isEmpty(self.elements[i]);
 							return false;
 						}
-					};
-					if(self.elements[i].type === 'text'){
+					}
+					if(self.elements[i].type === 'text' || self.elements[i].type === 'tel' ){
 						if(isEmpty(self.elements[i])){
 							continue;
 						} else {
@@ -110,8 +110,18 @@
 				//Отправляем
 				request.open('POST',self.mailer);
 				request.onreadystatechange = function () {
+
+					//Если сообщение ушло, очистить поля
 					if (request.readyState === 4 && request.status === 200){
-						console.log(request);
+						for(var i = 0; i < self.elements.length; i++){
+
+							if(self.elements[i].type === 'text' || self.elements[i].type === 'tel' ){
+								self.elements[i].value = "";
+							}
+
+						}
+
+						alert("Ваше сообщение отправлено!");
 
 					}
 				};
