@@ -29,7 +29,7 @@
 
 	<!--Checkbox input -->
 	<div class="form-box__input-wrapper">
-		<label for="agreed">Я принимаю условия!</label>
+		<label for="agreed">Я принимаю условия на обработку персональных данных!</label>
 		<input type="checkbox" name="agreed" id="agreed">
 		<div class="message">Вы не приняли соглашение!</div>
 	</div>
