@@ -1,0 +1,8 @@
+AddDefaultCharset utf-8
+
+#Запрет листинга каталогов
+Options +MultiViews
+
+IndexOptions FancyIndexing
+
+IndexIgnore *.jpg
