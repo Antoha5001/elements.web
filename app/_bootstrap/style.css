@@ -1,0 +1,25 @@
+*{
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h2{
+    color: #572e09;
+    text-align: center;
+}
+h2, .subtitle  {
+    margin-top: 1em;
+    display: block;
+}
+header, .column {
+    background: #3b3151;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid black;
+}
+.column_no-border{
+    border: none;
+    /*padding: 0;*/
+}

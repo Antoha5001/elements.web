@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="container">
+        <header class="row">
+            <div class="col-12">
+                <h1>Пример BOOTSTRAP 4</h1>
+            </div>
+        </header>
+
+        <div class="row">
+            <h3 class="subtitle">Колонки одинаковой ширины (col)</h3>
+        </div>
+        <div class="row">
+            <div class="col column">1 из 2</div>
+            <div class="col column">2 из 2</div>
+        </div>
+        <div class="row">
+            <div class="col column" style="">1 из 3</div>
+            <div class="col column">2 из 3</div>
+            <div class="col column">3 из 3</div>
+        </div>
+        <div class="row">
+            <div class="col column">1 из 4</div>
+            <div class="col column">2 из 4</div>
+            <div class="col column">3 из 4</div>
+            <div class="col column">4 из 4</div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+
+                <h3 class="subtitle">Установка ширины одной колонкой (col1-12)</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col column">1 из 3</div>
+            <div class="col-8 column">2 из 3 (col-8)</div>
+            <div class="col column">3 из 3</div>
+        </div>
+        <div class="row">
+            <div class="col column">1 из 3 (col-auto)</div>
+            <div class="col-5 column">2 из 3 (col-5)</div>
+            <div class="col column">3 из 3 (col-auto)</div>
+        </div>
+
+        <div class="row">
+            <h3 class="subtitle">Колонки переменной ширины (col - sm, md, lg, xl)</h3>
+        </div>
+        <div class="row justify-content-sm-center justify-content-lg-start">
+            <div class="col col-lg-2 column">1 из 3</div>
+            <div class="col col-md-2 column">2 из 3</div>
+            <div class="col col-md-2 column">3 из 3</div>
+        </div>
+        <div class="row justify-content-sm-center justify-content-lg-start">
+            <div class="col col-md-2 column">1 из 3</div>
+            <div class="col-sm-auto column">Контент переменной ширины вапвыпывп</div>
+        </div>
+
+        <div class="row">
+            <h3 class="subtitle">Мульти-ряд (пустой .w-100)</h3>
+        </div>
+        <div class="row">
+            <div class="col column">1</div>
+            <div class="col column">1</div>
+            <div class="w-100"></div>
+            <div class="col column">1</div>
+            <div class="col column">1</div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Адаптивные классы</h2>
+                <h3 class="subtitle">Брейкпойнты (sm, md, lg, xl)</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-md-8 column">col-8</div>
+            <div class="col-6 col-md-4 column">col-4</div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3 class="subtitle">На мобильных (без col на всю ширину)</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-md-8 column">col-8</div>
+            <div class=" col-md-4 column">col-4</div>
+        </div>
+        <div class="row">
+            <div class=" col-md column">col-md складываются, меньше md на всю ширину</div>
+            <div class=" col-md column">col-md складываются, меньше md на всю ширину</div>
+            <div class=" col-md column">col-md складываются, меньше md на всю ширину</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="subtitle">Создание сложной комбинированной вёрстки ()</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 column">col-md-8</div>
+            <div class="col-6 col-md-4 column">col-6 col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-4 column">col-6 col-md-4</div>
+            <div class="col-6 col-md-4 column">col-6 col-md-4</div>
+            <div class="col-6 col-md-4 column">col-6 col-md-4</div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Выравнивание</h2>
+                <h3 class="subtitle">Вертикальное выравнивание (align-items)</h3>
+            </div>
+        </div>
+        <div class="row align-items-start" style="height: 150px;background: #9ba0aa">
+            <div class="col column">верх</div>
+            <div class="col column">верх</div>
+            <div class="col column">верх</div>
+        </div>
+        <br>
+        <div class="row align-items-center" style="height: 150px;background: #9ba0aa">
+            <div class="col column">Середина</div>
+            <div class="col column">Середина</div>
+            <div class="col column">Середина</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h3 class="subtitle">Вертикальное выравнивание (align-self)</h3>
+            </div>
+        </div>
+        <div class="row" style="min-height: 180px;background: #9ba0aa">
+            <div class="col align-self-start column">Верх</div>
+            <div class="col align-self-center column">Середина</div>
+            <div class="col align-self-end column">Низ</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h3 class="subtitle">Горизонтальное выравнивание</h3>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-3 column">row justify-content-start</div>
+            <div class="col-3 column">row justify-content-start</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="subtitle">Удаление полей между колонками</h3>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-6 col-md-4 column column_no-border">123</div>
+            <div class="col-6 col-md-4 column column_no-border">123</div>
+            <div class="col-6 col-md-4 column column_no-border">123</div>
+            <div class="col-6 col-sm-4 column column_no-border">123</div>
+            <div class="col-6 col-sm-4 column column_no-border">123</div>
+            <div class="col-6 col-sm-4 column column_no-border">123</div>
+            <div class="col-6 col-sm-4 column column_no-border">123</div>
+            <div class="col-6 col-sm-4 column column_no-border">123</div>
+            <div class="col-6 col-sm-4 column column_no-border">123</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-9 column">col-9</div>
+            <div class="col-4 column">col-4 <br> 9+4 = 13 - это больше 12. Данный элемент шириной в 4 колонки будет перенесён на новую строку.</div>
+            <div class="col-6 column">col-6</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Переносы</h2>
+                <h3 class="subtitle">Классы порядка элементов</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col column">Первый неупорядоченный элемент</div>
+            <div class="col column order-12">Второй, упорядоченный как последний</div>
+            <div class="col column order-1">Третий, как первый</div>
+        </div>
+        <div class="row">
+            <div class="col column">Первый неупорядоченный элемент</div>
+            <div class="col column order-last">Второй, упорядоченный как последний</div>
+            <div class="col column order-first">Третий, как первый</div>
+        </div>>
+        <div class="row">
+            <div class="col">
+                <h3 class="subtitle">Смещение колонок ()</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 column">123</div>
+            <div class="col-md-4 offset-md-3 column">123</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 offset-md-3 column">123</div>
+            <div class="col-md-3 offset-md-3 column">123</div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3 class="subtitle">Вложенность ()</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 col-md-6 column">
+                Уровень 1
+                <div class="row">
+                    <div class="col-8 col-md-6 column">
+                        Уровень 2
+                    </div>
+                    <div class="col-4 col-md-6 column">
+                        Уровень 2
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
