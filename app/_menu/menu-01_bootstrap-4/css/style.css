@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "fira";
   src: url("../fonts/FiraSans-Regular.ttf") format("truetype");
@@ -10,7 +11,12 @@
 *Menu*
 */
 .menu {
-  float: left; }
+  overflow: hidden;
+  flex-direction: column; }
+  @media (min-width: 992px) {
+    .menu {
+      flex-direction: row;
+      overflow: visible; } }
 
 .menu * {
   padding: 0;
@@ -23,6 +29,9 @@ body {
   font-family: "fira";
   box-sizing: border-box;
   border-collapse: collapse; }
+  @media (min-width: 1200px) {
+    body {
+      background: red; } }
 
 header {
   /*margin-top: 200px;*/ }
@@ -36,66 +45,63 @@ header {
   display: flex;
   justify-content: center; }
 
+/*Самые первые пункты меню*/
 .menu > ul li a {
   display: block;
-  padding: 15px 15px 15px 40px;
+  padding: 15px 25px 15px 40px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #000;
-  background: #e2e2e2;
+  color: #222222;
+  background: #fff;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0);
-  /* IE6-9 */
   transition: all 0.3s; }
 
+/*Все пункты relative, все списки подменю absolut, сдвинуты*/
 .menu > ul li {
-  position: relative;
-  border-right: 1px solid #c7c8ca; }
+  position: relative; }
 
+/*Иконки первых пунктов*/
 .menu > ul li > a i.fa {
   position: absolute;
   left: 12px;
-  top: 16px;
+  top: 18px;
   font-size: 18px; }
 
-.menu > ul > li:first-child {
-  border-left: 1px solid #666; }
-
-.menu > ul > li:last-child {
-  border-right: 1px solid #666; }
-
+/*Обводка по бокам меню*/
+/*Цвет первых пунктов при навидении*/
 .menu > ul li a:hover {
-  background: #454547;
-  color: #fff;
-  box-shadow: 1px 5px 10px -5px black; }
+  color: #f30; }
+
+.menu > ul > li > a:hover:hover {
+  color: #f30; }
 
 /*
-*Sub menu
+*SUB MENU
 */
+/*Пункты подменю*/
 .menu li ul {
   position: absolute;
-  min-width: 150px;
+  min-width: 190px;
   display: none; }
 
 .menu li > ul li {
   border-bottom: 1px solid #666; }
+  .menu li > ul li:hover {
+    border-bottom: 1px solid #f30; }
 
+/*Ссылки подменю, сам текст*/
 .menu li > ul li a {
   padding: 10px;
   text-transform: none;
-  background: #e4e4e5; }
+  background: #ffe9db; }
 
+/*Второе подменю, отступ равен минимальной ширине подменю*/
 .menu li ul li ul {
   position: absolute;
-  right: -150px;
+  right: -190px;
   top: 0; }
 
+/*При наведении на пункт, следующий подпункт становится видимым*/
 .menu li:hover > ul {
   display: block; }
 
@@ -104,42 +110,47 @@ header {
   display: none; }
 
 .menu label.menu__toggle {
+  display: block;
   background: #e2e2e2;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0);
-  /* IE6-9 */
-  display: none;
   padding: 15px 40px;
   text-transform: uppercase;
   font-size: 14px;
   cursor: pointer;
   position: relative; }
+  @media (min-width: 992px) {
+    .menu label.menu__toggle {
+      display: none; } }
 
 .menu label.menu__toggle .fa {
   position: absolute;
   left: 15px; }
 
-@media all and (max-width: 960px) {
-  .menu {
-    overflow: hidden;
-    flex-direction: column; }
+span.icon {
+  display: none;
+  float: right;
+  margin-right: 8px;
+  font-size: 16px;
+  min-height: 100%;
+  line-height: 40px; }
+  @media (min-width: 992px) {
+    span.icon {
+      display: inline-block; } }
 
+span.icon::before {
+  content: "\f105"; }
+
+li:hover > span.icon {
+  display: none; }
+
+@media all and (max-width: 992px) {
   .menu ul {
     display: block;
     max-height: 0;
     transition: max-height 0.5s; }
 
-  .menu label.menu__toggle {
-    display: block; }
-
   input.menu__toggle:checked + label.menu__toggle {
-    background: #000;
+    background: #f30;
     color: #fff; }
 
   input.menu__toggle:checked ~ ul,

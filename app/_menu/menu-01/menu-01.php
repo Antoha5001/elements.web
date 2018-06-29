@@ -44,7 +44,10 @@
         <input type="checkbox" name="toggle" id="menu" class="menu__toggle"/>
         <label for="menu" class="menu__toggle"><i class="fa fa-bars"></i>Меню</label>
         <ul>
-            <li><a href="#"><i class="fa fa-home"></i>Главная</a></li>
+            <li>
+                <a href="#"><i class="fa fa-home"></i>Главная</a>
+            </li>
+
             <li>
                 <input type="checkbox" name="toggle" class="submenu__toggle" id="sub_m1"/>
                 <a href="#"><i class="fa fa-shopping-basket"></i>Продукция</a>
@@ -75,6 +78,7 @@
                     <li><a href="#">Быт. химия</a></li>
                 </ul>
             </li>
+
             <li>
                 <input type="checkbox" name="toggle" class="submenu__toggle" id="sub_m2"/>
                 <a href="#"><i class="fa fa-cogs"></i>Услуги</a>
@@ -85,6 +89,7 @@
                     <li><a href="#">Услуга 3</a></li>
                 </ul>
             </li>
+
             <li><a href="#"><i class="fa fa-newspaper-o"></i>Новости</a></li>
             <li><a href="#"><i class="fa fa-address-book-o"></i>Контакты</a></li>
         </ul>
