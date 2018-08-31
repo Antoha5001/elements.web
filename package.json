@@ -25,5 +25,6 @@
     "gulp-uglify": "^2.1.0",
     "gulp-util": "^3.0.8",
     "vinyl-ftp": "^0.6.0"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,60 @@
+.img{
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 20px;
+    cursor: pointer;
+}
+.big-img{
+    height: 200px;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+    width: 40px;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    /*width: 20px;*/
+    height: 40px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    /*color: transparent;*/
+    border: none;
+    outline: none;
+    /*background: transparent;*/
+}
+
+.slick-prev{
+    left: -80px;
+}
+.slick-next{
+    right: -80px;
+}
+.your-class2 .slick-list{
+    width: 900px;
+}
+.your-class2{
+    position: relative;
+
+    justify-content: center;
+    width: 900px;
+    margin: 40px auto 0;
+}
+.your-class{
+
+    margin-top: 40px;
+}

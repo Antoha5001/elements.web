@@ -1,0 +1,24 @@
+{
+  "name": "elements.web",
+  "description": "My web templates",
+  "main": "index.js",
+  "directory": "lib",
+  "authors": [
+    "Anton Voronovich"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Antoha5001/elements.web",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "500303_GULP/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "popper.js": "^1.14.4",
+    "jquery": "^3.3.1",
+    "bootstrap4": "^4.1.3"
+  }
+}
