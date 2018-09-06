@@ -13,24 +13,49 @@
 </head>
 <body>
 <div class="container">
-    <div class="row your-class">
-        <div class="col-12 big-img">1</div>
-        <div class="col-12 big-img">2</div>
-        <div class="col-12 big-img">3</div>
-        <div class="col-12 big-img">4</div>
+    <div class="row ">
+        <div class="col-12">
+            <div class="slick__big-img_wrapper">
+                <div class="slick__big-img">
+                    <img src="images/food-01.jpg" alt="">
+                </div>
+                <div class="slick__big-img">
+                    <img src="images/food-02.jpg" alt="">
+                </div>
+                <div class="slick__big-img">
+                    <img src="images/food-01.jpg" alt="">
+                </div>
+                <div class="slick__big-img">
+                    <img src="images/food-02.jpg" alt="">
+                </div>
+
+            </div>
+            <div class="slick__img-container">
+                <div class="img-wrapper">
+                    <img src="images/foto-1_thumb.jpg" alt="">
+                </div>
+                <div class="img-wrapper">
+                    <img src="images/foto-2_thumb.jpg" alt="">
+                </div>
+                <div class="img-wrapper">
+                    <img src="images/foto-1_thumb.jpg" alt="">
+                </div>
+                <div class="img-wrapper">
+                    <img src="images/foto-2_thumb.jpg" alt="">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="your-class2">
-        <div class="col-3 img">1</div>
-        <div class="col-3 img">2</div>
-        <div class="col-3 img">3</div>
-        <div class="col-3 img">4</div>
-    </div>
+    <br>
+    <br>
+    <br>
+    <br>
 
 </div>
 
 
 <script src="../../../libs/jquery/dist/jquery.min.js"></script>
-<script src="../../../libs/popper.js/dist/popper.min.js"></script>
+<!--<script src="../../../libs/popper.js/dist/popper.min.js"></script>-->
 <script src="../../../libs/bootstrap4/dist/js/bootstrap.min.js"></script>
 <script src="slick.min.js"></script>
 <script>
@@ -39,18 +64,26 @@
         window.addEventListener('DOMContentLoaded', init);
 
         function init() {
-            $('.your-class').slick({
+            const bigImg = $('.slick__big-img_wrapper'),
+            thumbImg = $('.slick__img-container');
+
+            if(bigImg.length > 0){
+                console.log(bigImg);
+            }
+            bigImg.slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 arrows: false,
                 fade: true,
-                asNavFor: '.your-class2',
-                // autoplay: true
+                asNavFor: thumbImg,
+                autoplay: true
             });
-            $('.your-class2').slick({
+            thumbImg.slick({
                 slidesToShow: 3,
-                asNavFor: '.your-class',
+                asNavFor: bigImg,
                 focusOnSelect: true,
+                variableWidth:true,
+                centerMode: true
             });
         }
     })();

@@ -1,22 +1,24 @@
-.img{
-    height: 200px;
-    width: 200px;
-    border: 1px solid black;
-    margin: 0 20px;
-    cursor: pointer;
+.slick__big-img_wrapper{
+
+    margin-top: 40px;
 }
-.big-img{
-    height: 200px;
-    border: 1px solid black;
+.slick__big-img{
+    height: auto;
     width: 100%;
 }
+.slick__big-img img{
 
+    width: 100%;
+}
 .slick-prev,
 .slick-next
 {
     font-size: 0;
     line-height: 0;
     width: 40px;
+    height: 40px;
+    background: none;
+    border-radius: 3px;
 
     position: absolute;
     top: 50%;
@@ -24,7 +26,6 @@
     display: block;
 
     /*width: 20px;*/
-    height: 40px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -37,24 +38,80 @@
     outline: none;
     /*background: transparent;*/
 }
+.slick-prev:hover::after,
+.slick-next:hover::after{
+    transform:scale(1.3);
+    transition: all 0.5s;
+}
 
 .slick-prev{
     left: -80px;
 }
+.slick-prev::after, .slick-next::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    /*background-color: #00cc00;*/
+}
+.slick-next::after{
+    background-image: url("images/next_arrow.svg");
+}
+.slick-prev::after{
+    background-image: url("images/prev_arrow.svg");
+}
 .slick-next{
     right: -80px;
 }
-.your-class2 .slick-list{
-    width: 900px;
+
+.img-wrapper{
+    height: 146px;
+    width: 212px;
+    /*border: 1px solid black;*/
+    margin: 0 20px;
+    cursor: pointer;
 }
-.your-class2{
+
+.slick__img-container .slick-list{
+    width: 756px;
+}
+
+.slick__img-container{
     position: relative;
 
     justify-content: center;
-    width: 900px;
+    width: 756px;
     margin: 40px auto 0;
 }
-.your-class{
 
-    margin-top: 40px;
+@media (max-width: 991.98px) {
+    .slick__img-container{
+        width: 600px;
+    }
+
+    .slick__img-container .slick-list{
+        width: 600px;
+    }
+    .img-wrapper{
+
+        width: 160px;
+        height: auto;
+    }
+    .img-wrapper img{
+
+        width: 100%;
+    }
+
+
+    .slick-prev{
+        left: -40px;
+    }
+    .slick-next{
+        right: -40px;
+    }
+}
+@media (max-width: 767.98px) {
+    .slick__img-container{
+       display: none;
+    }
 }
