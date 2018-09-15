@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../libs/bootstrap4/dist/css/bootstrap.css">
+    <style>
+        section{
+            height: 500px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        h1.wow {
+            /*border: 1px solid black;*/
+
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translate(-500px, 100px);
+        }
+
+        h1.wow.is-visible{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<section class="container">
+    <h1>Заголовок</h1>
+</section>
+<section class="container">
+    <h1>Заголовок</h1>
+</section>
+<section class="container wow-link">
+    <h1 class="wow">Заголовок третий</h1>
+</section>
+<section class="container">
+    <h1>Заголовок</h1>
+</section>
+<section class="container">
+    <h1>Заголовок</h1>
+</section>
+<section class="container">
+    <h1>Заголовок</h1>
+</section>
+
+<!--<script src="../../../libs/jquery/dist/jquery.min.js"></script>-->
+<script src="../../../libs/bootstrap4/dist/js/bootstrap.min.js"></script>
+<script>
+    (function () {
+        window.addEventListener('DOMContentLoaded', init);
+        function init() {
+
+            function ShowHidden(settings) {
+                let self = this;
+                this.element = settings.element;
+                this.container = settings.container;
+                // this.windowTop = window.pageYOffset;
+                // this.coords = this.element.getBoundingClientRect();
+
+                // console.log(this.element.getBoundingClientRect().top);
+
+                window.addEventListener('scroll', function () {
+                    // var elemCoords = self.element.getBoundingClientRect(),
+                    var elemCoords = self.element.getBoundingClientRect().top,
+                        docTop = document.documentElement.scrollTop,
+                        containerTop = self.container.getBoundingClientRect().top,
+                        docHeight = document.documentElement.clientHeight;
+
+                    // console.log($(window).scrollTop());
+                    // console.log(self.element.offset().top);
+                    // console.log("Контейнер: "+ (self.container.getBoundingClientRect().top ));
+                    // console.log("Высота окна: "+ docHeight);
+                    // console.log("Документ: "+ (docTop));
+
+                    if( containerTop + 200 < docHeight){
+
+                        self.element.classList.add('is-visible');
+
+                    }   else if(containerTop + 200 > docHeight) {
+                        self.element.classList.remove('is-visible');
+                    }
+                });
+
+            }
+
+
+
+            var title = {
+                // element: document.getElementsByTagName('h1')[2],
+                element: document.querySelector('.wow'),
+                container: document.querySelector('.wow-link'),
+            };
+
+            var titleShow = new ShowHidden(title);
+
+
+            console.log(title.element.getBoundingClientRect().top);
+            // titleShow.log();
+
+
+
+        }
+    })();
+</script>
+</body>
+</html>
