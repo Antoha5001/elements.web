@@ -45,7 +45,7 @@
     <h1>Заголовок</h1>
 </section>
 
-<!--<script src="../../../libs/jquery/dist/jquery.min.js"></script>-->
+<script src="../../../libs/jquery/dist/jquery.min.js"></script>
 <script src="../../../libs/bootstrap4/dist/js/bootstrap.min.js"></script>
 <script>
     (function () {
@@ -56,29 +56,24 @@
                 let self = this;
                 this.element = settings.element;
                 this.container = settings.container;
-                // this.windowTop = window.pageYOffset;
-                // this.coords = this.element.getBoundingClientRect();
-
-                // console.log(this.element.getBoundingClientRect().top);
 
                 window.addEventListener('scroll', function () {
-                    // var elemCoords = self.element.getBoundingClientRect(),
+
                     var elemCoords = self.element.getBoundingClientRect().top,
-                        docTop = document.documentElement.scrollTop,
                         containerTop = self.container.getBoundingClientRect().top,
                         docHeight = document.documentElement.clientHeight;
-
-                    // console.log($(window).scrollTop());
-                    // console.log(self.element.offset().top);
-                    // console.log("Контейнер: "+ (self.container.getBoundingClientRect().top ));
-                    // console.log("Высота окна: "+ docHeight);
-                    // console.log("Документ: "+ (docTop));
 
                     if( containerTop + 200 < docHeight){
 
                         self.element.classList.add('is-visible');
+                        // self.element.style.opacity = "1";
+                        // self.element.style.transform = "translate(0px, 0px)";
 
-                    }   else if(containerTop + 200 > docHeight) {
+
+                    }   else if (containerTop + 200 > docHeight) {
+
+                        // self.element.style.opacity = "0";
+                        // self.element.style.transform = " translate(-500px, 100px)";
                         self.element.classList.remove('is-visible');
                     }
                 });
