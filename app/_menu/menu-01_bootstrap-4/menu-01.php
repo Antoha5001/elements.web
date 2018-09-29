@@ -52,7 +52,32 @@
 
                         <li>
                             <input type="checkbox" name="toggle" class="submenu__toggle" id="sub_m1"/>
-                            <a href="#"><i class="fa fa-shopping-basket"></i>Продукция</a>
+                            <a href="#"><i class="fa fa-shopping-basket"></i>Компания</a>
+                            <label for="sub_m1" class="submenu__toggle">
+                                <i class="fa"></i>
+                            </label>
+                            <ul>
+                                <li><a href="#">О типографии</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" name="toggle" class="submenu__toggle" id="sub_m2"/>
+                            <a href="#"><i class="fa fa-cogs"></i>Продукция</a>
+                            <label for="sub_m2" class="submenu__toggle"><i class="fa"></i></label>
+                            <ul>
+                                <li><a href="#">Буклеты</a></li>
+                                <li><a href="#">Брошуры</a></li>
+                                <li><a href="#">Каталоги</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#"><i class="fa fa-newspaper"></i>Новости</a></li>
+                        <li><a href="#"><i class="fa fa-address-book"></i>Услуги</a></li>
+
+                        <li>
+                            <input type="checkbox" name="toggle" class="submenu__toggle" id="sub_m1"/>
+                            <a href="#"><i class="fa fa-shopping-basket"></i>Компания</a>
                             <label for="sub_m1" class="submenu__toggle">
                                 <i class="fa"></i>
                             </label>
@@ -85,20 +110,6 @@
                                 <li><a href="#">Быт. химия</a></li>
                             </ul>
                         </li>
-
-                        <li>
-                            <input type="checkbox" name="toggle" class="submenu__toggle" id="sub_m2"/>
-                            <a href="#"><i class="fa fa-cogs"></i>Услуги</a>
-                            <label for="sub_m2" class="submenu__toggle"><i class="fa"></i></label>
-                            <ul>
-                                <li><a href="#">Услуга 1</a></li>
-                                <li><a href="#">Услуга 2</a></li>
-                                <li><a href="#">Услуга 3</a></li>
-                            </ul>
-                        </li>
-
-                        <li><a href="#"><i class="fa fa-newspaper"></i>Новости</a></li>
-                        <li><a href="#"><i class="fa fa-address-book"></i>Контакты</a></li>
                     </ul>
                 </nav>
             </div>

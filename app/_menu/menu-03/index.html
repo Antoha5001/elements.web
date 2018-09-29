@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            position: relative;
+            display: inline-block;
+        }
+
+        menu {
+            position: absolute;
+            top: 100%;
+            will-change: transform;
+            transition: transform .3s;
+            transform: scaleY(0);
+            transform-origin: 50% 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        menu ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        menu a {
+            display: block;
+            padding: 5px 15px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        menu a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        span {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            cursor: default;
+        }
+
+        div:hover > menu {
+            transform: scaleY(1);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>hover me</span>
+    <menu>
+        <ul>
+            <li><a href="#">Main</a>
+            <li><a href="#">Stories</a>
+            <li><a href="#">Blog</a>
+            <li><a href="#">Something</a>
+        </ul>
+    </menu>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ratione error, hic alias officiis voluptatibus ipsa natus ab maxime accusamus rerum sunt aliquid. Ratione vero blanditiis assumenda, nisi non. A.</p>
+
+Развернуть фрагмент
+</body>
+</html>
