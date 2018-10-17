@@ -5,18 +5,35 @@
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        *{
+        html{
+            /*width: 100vw;*/
+            /*height: 100vh;*/
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*place-items: center;*/
+        }
+        body * {
             padding: 0;
             margin: 0;
+            box-sizing: border-box;
         }
-        .wrapper{
+
+        .wrapper {
             max-width: 960px;
             margin: auto;
             display: grid;
             grid-template-columns: 30% 30% 40%;
             grid-gap: 15px;
         }
-        .wrapper2{
+
+        .wrapper2 {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             margin: 30px auto;
@@ -25,84 +42,172 @@
             grid-auto-rows: minmax(150px, auto);
 
         }
-        .box{
+
+        .box {
             padding: 15px;
             background-color: pink;
         }
-        div.light{
+
+        div.light {
 
             background-color: #ffe1dd;
         }
-        .orange{
+
+        .orange {
 
             background-color: #ff9f54;
         }
-        .included{
+
+        .included {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 15px;
         }
-        .included >div{
+
+        .included > div {
             background: #00c8ff;
         }
-        .box1{
+
+        .box1 {
             grid-column: 1/4;
             grid-row: 1/3;
-            transition:all 0.5s ease-in ;
+            transition: all 0.5s ease-in;
         }
-        .box1:hover{
+
+        .box1:hover {
             transform: scaleX(0.5);
         }
+
+        .gallary-box {
+            display: grid;
+            text-align: center;
+            /*border: 1px solid black;*/
+            grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+            grid-gap: 30px;
+
+        }
+
+        @media (max-width: 540px) {
+            .gallary-box {
+                grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr;
+            }
+        }
+
+        .gallary h1 {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .image {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            /*border: 1px solid black;*/
+        }
+        .image img{
+            display: block;
+            max-width: 100%;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .image img:hover{
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 <body>
 <div class="wrapper">
     <div class="box">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut corporis cupiditate dicta ea esse exercitationem illo impedit itaque iure, iusto libero magnam magni molestiae numquam optio placeat quam quas quo recusandae soluta, tempore tenetur veritatis! A accusamus consequatur debitis deserunt dignissimos dolor, eius error ex excepturi exercitationem fugiat fugit harum laudantium, nam neque nihil nobis odio perspiciatis placeat quam unde voluptatibus voluptatum! Atque dolore error illo illum modi vel!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut corporis cupiditate dicta ea esse
+        exercitationem illo impedit itaque iure, iusto libero magnam magni molestiae numquam optio placeat quam quas quo
+        recusandae soluta, tempore tenetur veritatis! A accusamus consequatur debitis deserunt dignissimos dolor, eius
+        error ex excepturi exercitationem fugiat fugit harum laudantium, nam neque nihil nobis odio perspiciatis placeat
+        quam unde voluptatibus voluptatum! Atque dolore error illo illum modi vel!
     </div>
     <div class="light">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam doloremque ipsam laboriosam quae rerum! Aliquid impedit ipsam possimus voluptatibus. Blanditiis!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam doloremque ipsam laboriosam quae rerum!
+        Aliquid impedit ipsam possimus voluptatibus. Blanditiis!
     </div>
     <div class="box">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut corporis cupiditate dicta ea esse exercitationem illo impedit itaque iure, iusto libero magnam magni molestiae numquam optio placeat quam quas quo recusandae soluta, tempore tenetur veritatis! A accusamus consequatur debitis deserunt dignissimos dolor, eius error ex excepturi exercitationem fugiat fugit harum laudantium, nam neque nihil nobis odio perspiciatis placeat quam unde voluptatibus voluptatum! Atque dolore error illo illum modi vel!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut corporis cupiditate dicta ea esse
+        exercitationem illo impedit itaque iure, iusto libero magnam magni molestiae numquam optio placeat quam quas quo
+        recusandae soluta, tempore tenetur veritatis! A accusamus consequatur debitis deserunt dignissimos dolor, eius
+        error ex excepturi exercitationem fugiat fugit harum laudantium, nam neque nihil nobis odio perspiciatis placeat
+        quam unde voluptatibus voluptatum! Atque dolore error illo illum modi vel!
     </div>
     <div class="box">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut corporis cupiditate dicta ea esse exercitationem illo impedit itaque iure, iusto libero magnam magni molestiae numquam optio placeat quam quas quo recusandae soluta, tempore tenetur veritatis! A accusamus consequatur debitis deserunt dignissimos dolor, eius error ex excepturi exercitationem fugiat fugit harum laudantium, nam neque nihil nobis odio perspiciatis placeat quam unde voluptatibus voluptatum! Atque dolore error illo illum modi vel!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut corporis cupiditate dicta ea esse
+        exercitationem illo impedit itaque iure, iusto libero magnam magni molestiae numquam optio placeat quam quas quo
+        recusandae soluta, tempore tenetur veritatis! A accusamus consequatur debitis deserunt dignissimos dolor, eius
+        error ex excepturi exercitationem fugiat fugit harum laudantium, nam neque nihil nobis odio perspiciatis placeat
+        quam unde voluptatibus voluptatum! Atque dolore error illo illum modi vel!
     </div>
 </div>
-
-
 
 <div class="wrapper2">
     <div class="box box1">
         Lorem ipsum dolor sit
     </div>
     <div class="box orange box2">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi sit!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi
+        sit!
     </div>
     <div class="box box3">
-       <div class="included">
-           <div>lorem</div>
-           <div>lorem</div>
-           <div>lorem</div>
-           <div>lorem</div>
-       </div>
+        <div class="included">
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+        </div>
     </div>
     <div class="box orange">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi sit!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi
+        sit!
     </div>
     <div class="box orange">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi sit!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi
+        sit!
     </div>
     <div class="box orange">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi sit!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi
+        sit!
     </div>
     <div class="box orange">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi sit!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet voluptas voluptatem? Aliquam, commodi
+        sit!
     </div>
-
-
-
 </div>
+<section class="gallary">
+    <h1>Наши работы:</h1>
+    <div class="gallary-box">
+        <div class="image">
+            <img src="gallary.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="gallary.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="gallary.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="gallary.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="gallary.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="gallary.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="gallary.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="gallary.jpg" alt="">
+        </div>
+    </div>
+</section>
+
 </body>
 </html>

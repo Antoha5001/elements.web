@@ -49,29 +49,33 @@ header {
 /*
 *Menu*
 */
+.fa-enter {
+  transform: translateX(-100%); }
+
 .menu-top * {
   padding: 0;
   margin: 0; }
 
-@media (max-width: 992px) {
-  .menu-top {
+.menu-top {
+  display: block; }
+  @media (max-width: 992px) {
+    .menu-top {
+      display: none;
+      top: 200px;
+      height: calc(100% - 200px);
+      position: fixed;
+      background: #ffffff;
+      overflow: scroll;
+      min-width: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.5s ease-out; } }
+  .menu-top a {
+    color: #111111;
     display: block;
-    top: 200px;
-    height: calc(100% - 200px);
-    position: fixed;
-    background: #ffffff;
-    overflow: scroll;
-    min-width: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition: all 0.5s ease-out;
-    transform: translateX(-100%); } }
-.menu-top a {
-  color: #111111;
-  display: block;
-  text-transform: uppercase; }
-.menu-top a:hover {
-  text-decoration: none; }
+    text-transform: uppercase; }
+  .menu-top a:hover {
+    text-decoration: none; }
 
 .menu-top.show {
   visibility: visible;
@@ -79,21 +83,22 @@ header {
   transform: translateX(0); }
 
 .menu-top__wrapper {
+  display: block;
   margin-top: 90px; }
 
 /*ПЕРВЫЕ ПУНКТЫ*/
 li.menu-top_title {
-  max-height: 57px;
+  display: inline-block;
   background: #eeeeee;
   overflow: hidden; }
 
 .menu-top_title > ul {
+  display: none;
   opacity: 0;
   transition: opacity 0.3s 0.1s; }
 
 li.menu-top_title.show {
-  transition: max-height 0.3s;
-  max-height: 1500px; }
+  transition: height 0.5s; }
 
 .menu-top_title.show > ul {
   transition: opacity 0.45s;
@@ -108,7 +113,6 @@ li.menu-top_title.show {
     background: #ccc; } }
 
 .menu-top_title-link ~ ul {
-  display: block;
   overflow: hidden; }
 
 @media (max-width: 992px) {

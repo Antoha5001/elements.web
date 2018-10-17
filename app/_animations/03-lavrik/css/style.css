@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+.fa-leave-active {
+  animation-name: niceOut;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards; }
+
+.fa-enter {
+  visibility: hidden; }
+
+.fa-enter-active {
+  animation-name: niceIn;
+  animation-duration: 0.3s;
+  animation-timing-function: linear; }
+
+@keyframes niceIn {
+  from {
+    transform: translateX(-100px) scale(0.9);
+    opacity: 0; }
+  to {
+    transform: translateX(0px) scale(1);
+    opacity: 1; } }
+@keyframes niceOut {
+  from {
+    transform: translateX(0px) scale(1);
+    opacity: 1; }
+  to {
+    transform: translateX(100px) scale(0.9);
+    opacity: 0; } }
+
+/*# sourceMappingURL=style.css.map */

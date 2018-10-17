@@ -56,14 +56,36 @@ header{
 /*
 *Menu*
 */
+.fa-leave{
+
+}
+.fa-leave-active{
+
+}
+.fa-leave-to{
+
+}
+
+.fa-enter{
+
+  transform: translateX(-100%);
+}
+.fa-enter-active{
+
+}
+.fa-enter-to{
+
+}
 .menu-top * {
   padding: 0;
   margin: 0;
 }
 
 .menu-top{
+
+  display: block;
   @media (max-width: 992px){
-    display: block;
+    display: none;
     top: 200px;
     height: calc(100% - 200px);
     position: fixed;
@@ -75,7 +97,6 @@ header{
     //visibility: hidden;
     opacity: 0;
     @include easy-out;
-    transform: translateX(-100%);
   }
   a{
     color: #111111;
@@ -103,6 +124,7 @@ header{
 }
 
 .menu-top__wrapper{
+  display: block;
   margin-top: 90px;
   //visibility: hidden;
 }
@@ -113,20 +135,22 @@ header{
 /*ПЕРВЫЕ ПУНКТЫ*/
 
 li.menu-top_title{
-  max-height: 57px;
+  display: inline-block;
+  //max-height: 57px;
   //@include easy-out;
   background: #eeeeee;
   overflow: hidden;
   //transition: max-height 1s;
 }
 .menu-top_title > ul{
+  display: none;
   opacity: 0;
   transition: opacity 0.3s 0.1s;
 }
 li.menu-top_title.show{
 
-  transition: max-height 0.3s;
-  max-height: 1500px;
+  transition: height 0.5s;
+  //max-height: 1500px;
 }
 .menu-top_title.show > ul{
   transition: opacity 0.45s;
@@ -146,7 +170,7 @@ li.menu-top_title.show{
   }
 }
 .menu-top_title-link ~ ul{
-  display: block;
+  //display: block;
   overflow: hidden;
   //width: 100%;
   //transform: scaleY(0);

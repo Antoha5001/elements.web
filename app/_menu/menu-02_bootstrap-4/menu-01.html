@@ -85,8 +85,8 @@
                             </ul>
                         </li>
 
-                        <li><a class="menu-top_title-link" href="#">Новости</a></li>
-                        <li><a class="menu-top_title-link" href="#">Контакты</a></li>
+                        <li class="menu-top_title"><a class="menu-top_title-link" href="#">Новости</a></li>
+                        <li class="menu-top_title"><a class="menu-top_title-link" href="#">Контакты</a></li>
                     </ul>
                 </nav>
 
@@ -101,72 +101,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- <script>window.jQuery || document.write('<script src="script/jquery.js"><\/script>')</script> -->
-<script>
-    (function () {
-        const MENU_TOP_BUTTON = document.querySelector('.menu-top__button'),
-            MENU_TOP = document.querySelector('.menu-top'),
-            MENU_TOP_TITLE = document.querySelectorAll('.menu-top_title'),
-            MENU_TOP_TITLE_LINK = document.querySelectorAll('.menu-top_title-link'),
-            body = document.body;
-
-        let show = false, showTitle = false;
-
-        MENU_TOP_BUTTON.addEventListener('click', menuShow);
-        MENU_TOP_TITLE_LINK.forEach( element => {
-            element.addEventListener('click', function (e) {
-                if(e.target.parentElement.children.length == 2){
-
-                    e.preventDefault();
-                }
-                e.stopPropagation();
-                console.log(e.target.parentElement.children.length);
-
-                MENU_TOP_TITLE.forEach(el => {
-
-                    // console.log(el);
-                    // console.log(el);
-                    if(el.classList.contains('show')){
-                        if(el === this.parentNode) {
-
-                            return;
-
-                        }
-
-                        el.style.height = '';
-
-                        el.classList.remove('show');
-                    }
-                    // console.log(el);
-                });
-                if (this.parentNode.style.height === 'auto'){
-                    this.parentNode.style.height = '';
-                } else{
-
-                    this.parentNode.style.height = 'auto';
-                }
-                this.parentNode.classList.toggle('show');
-
-                // console.log(this);
-            });
-        });
-
-        function menuShow() {
-            if(!show){
-
-                show = true;
-                MENU_TOP_BUTTON.classList.add('show');
-                MENU_TOP.classList.add('show');
-                body.classList.add('no-overflow');
-            } else {
-                MENU_TOP_BUTTON.classList.remove('show');
-                MENU_TOP.classList.remove('show');
-                body.classList.remove('no-overflow');
-                show = false;
-            }
-        }
-
-    })();
-</script>
+<script src="script/script.js"></script>
 </body>
 
 </html>

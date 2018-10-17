@@ -1,0 +1,71 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.animTarget{
+//display: none;
+}
+
+.fade-enter{
+}
+
+.fa-leave{
+
+}
+.fa-leave-active{
+  //transform: translateX(100px);
+   //transition: opacity 0.5s, transform 0.5s;
+  animation-name: niceOut;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+
+ }
+.fa-leave-to{
+  //opacity: 0.5;
+ }
+
+.fa-enter{
+  //opacity: 0;
+  visibility: hidden;
+  //transform: translateX(-100px);
+}
+
+.fa-enter-active{
+  animation-name: niceIn;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  //transition: opacity 0.5s, transform 0.5s;
+}
+.fa-enter-to{
+
+}
+
+@keyframes niceIn {
+  from{
+    transform: translateX(-100px) scale(0.9);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes niceOut {
+  from{
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+  }
+  to{
+    transform: translateX(100px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../fonts/FiraSans-Regular.eot");
+  src: url("../../../fonts/FiraSans-Regular.ttf") format("truetype"), url("../../../fonts/FiraSans-Regular.eot?#iefix") format("embedded-opentype"), url("../../../fonts/FiraSans-Regular.woff2") format("woff2"), url("../../../fonts/FiraSans-Regular.woff") format("woff"), url("../../../fonts/FiraSans-Regular.svg#OpenSans") format("svg"); }
+html * {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin: 0;
+  padding-top: 200px;
+  width: 100%;
+  height: 100vh;
+  background: url("../../../images/dark-forest.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  font-family: "Fira Sans",sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+h1 {
+  font-size: 70px;
+  color: #fff;
+  margin-top: 200px; }
+
+button {
+  margin-top: 1em;
+  height: 50px;
+  width: 300px;
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform .3s; }
+  button:hover {
+    transform: scale(1.1); }
+
+.snackbar.show {
+  visibility: visible;
+  animation: fadeIn .5s, fadeOut .5s 2.5s; }
+
+.snackbar {
+  visibility: hidden;
+  min-width: 300px;
+  padding: 16px;
+  background: #fff;
+  color: black;
+  position: absolute;
+  border-radius: 5px;
+  left: 50%;
+  font-size: 25px;
+  bottom: 100px;
+  margin-left: -150px; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    bottom: 0; }
+  to {
+    opacity: 1;
+    bottom: 100px; } }
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    bottom: 100px; }
+  to {
+    opacity: 0;
+    bottom: 0; } }
+
+/*# sourceMappingURL=style.css.map */

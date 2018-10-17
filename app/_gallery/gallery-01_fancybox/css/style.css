@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../fonts/Open-sans_regular.eot");
+  src: url("../../../fonts/Open-sans_regular.ttf") format("truetype"), url("../../../fonts/Open-sans_regular.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Open-sans_regular.woff2") format("woff2"), url("../../../fonts/Open-sans_regular.woff") format("woff"), url("../../../fonts/Open-sans_regular.svg#OpenSans") format("svg"); }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: bold;
+  font-weight: 800;
+  src: url("../../fonts/Open-sans 800.eot");
+  src: url("../../fonts/Open-sans 800.ttf") format("truetype"), url("../../fonts/Open-sans 800.eot?#iefix") format("embedded-opentype"), url("../../fonts/Open-sans 800.woff2") format("woff2"), url("../../fonts/Open-sans 800.woff") format("woff"), url("../../fonts/Open-sans 800.svg#OpenSans") format("svg"); }
+body {
+  font-family: 'Open Sans';
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh; }
+
+.gallery h1 {
+  font-size: 50px;
+  text-align: center; }
+
+.gellery-box {
+  margin: 0 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px; }
+
+.gellery-item {
+  overflow: hidden;
+  background: #111; }
+  .gellery-item img {
+    width: 100%;
+    display: block;
+    transition: all 0.3s; }
+  .gellery-item img:hover {
+    transform: scale(1.1);
+    opacity: 0.8; }
+
+/*# sourceMappingURL=style.css.map */
