@@ -1,0 +1,90 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body *{
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    max-width: 1200px;
+    /*padding: 0 15px;*/
+    margin: auto;
+    box-sizing: border-box;
+}
+nav{
+
+    background: #e2e2e2;
+}
+nav .wrapper{
+    position: relative;
+}
+
+.menu{
+    display: flex;
+}
+
+
+.menu li{
+
+}
+.menu li{
+    /*display: inline-block;*/
+    /*float: left;*/
+    /*margin-right: 30px;*/
+    list-style: none;
+}
+.menu li a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+
+}
+.menu li a:hover{
+    color: black;
+}
+.menuToggle{
+    display: none;
+    padding: 10px 15px;
+    background: #dbdbdb;
+}
+.content{
+    height: 100vh;
+    background: #cddbde;
+}
+@media screen and (max-width: 768px){
+    .menu{
+        display: none;
+        position: absolute;
+        /*display: block;*/
+        background: #e2e2e2;
+        width: 100%;
+        height: 100vh;
+    }
+    .menu li{
+        display: block;
+    }
+    .menuToggle{
+        display: inline-block;
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        right: 10px;
+        top: 10px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

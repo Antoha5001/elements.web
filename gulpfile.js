@@ -15,7 +15,7 @@ var gulp           = require('gulp'),
 		notify         = require("gulp-notify"),
 		gcmq         = require("gulp-group-css-media-queries"),
 
-		srv 						= 'elements.web:82';
+		srv 						= 'elements.web';
 
 // Скрипты проекта
 

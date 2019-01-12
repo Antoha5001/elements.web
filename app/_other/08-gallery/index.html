@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        body *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            /*flex: auto;*/
+            max-width: 100%;
+            margin: 0.5vw;
+            flex-wrap: wrap;
+            border: 1px solid black;
+            height: auto;
+        }
+        .items{
+            /*flex-grow: 1;*/
+            /*flex-shrink: 0;*/
+            flex: auto;
+            margin: 0.5vw;
+            /*border: 1px solid black;*/
+            height: auto;
+            width: 200px;
+            display: inline-block;
+
+        }
+        .items img{
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="items"><img src="01.jpg" alt=""></div>
+    <div class="items"><img src="02.jpg" alt=""></div>
+    <div class="items"><img src="03.jpg" alt=""></div>
+    <div class="items"><img src="04.jpg" alt=""></div>
+    <div class="items"><img src="05.jpg" alt=""></div>  
+</div>
+</body>
+</html>

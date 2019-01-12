@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /*overflow: hidden;*/
+        }
+        header{
+            height: 100vh;
+            background: darkslateblue;
+        }
+        .btn-nav{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            /*background: #1a1a1a;*/
+            right: 50px;
+            top: 50px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+        .btn-nav span{
+            display: block;
+            height: 7px;
+            width: 100%;
+            background: yellow;
+        }
+        .top-nav{
+            position: fixed;
+            background: lightgoldenrodyellow;
+            width: 400px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .top-nav.is-active{
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .logo{
+            width: 200px;
+            height: 50px;
+            background: darkviolet;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        .top-nav span{
+            margin-bottom: 1em;
+        }
+        .top-nav span a{
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-size: 24px;
+            color: #0b0b0b;
+            text-decoration: none;
+        }
+        .fa-enter{
+
+        }
+        .fa-enter-active{
+            animation-name: niceIn;
+            animation-duration: .3s;
+        }
+        .fa-leave-active{
+            animation-name: niceOut;
+            animation-duration: .3s;
+        }
+        @keyframes niceIn {
+            from{
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to{
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes niceOut {
+            from{
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to{
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="btn-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="top-nav">
+        <div class="logo"></div>
+        <span><a href="#">Главная</a></span>
+        <span><a href="#">Продукция</a></span>
+        <span><a href="#">О нас</a></span>
+        <span><a href="#">Контакты</a></span>
+    </div>
+</header>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt dicta doloribus earum eligendi iure minus officiis quo, sit sunt tempora temporibus velit veniam? Amet animi commodi corporis dicta dolor dolorem enim fuga illum magnam maxime obcaecati provident quibusdam quidem quis rem, sapiente sequi voluptatum! Debitis doloremque eum illum ipsam laborum modi natus non quisquam repellendus vero. Alias at culpa enim ipsum natus officiis sunt. Ad aperiam architecto, aspernatur dolores ex excepturi in magni necessitatibus neque nihil officiis placeat quae quis repudiandae sequi similique, tempore tenetur, unde veniam voluptatum! Corporis eos facilis maxime obcaecati porro quam quidem suscipit tempora tempore.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt dicta doloribus earum eligendi iure minus officiis quo, sit sunt tempora temporibus velit veniam? Amet animi commodi corporis dicta dolor dolorem enim fuga illum magnam maxime obcaecati provident quibusdam quidem quis rem, sapiente sequi voluptatum! Debitis doloremque eum illum ipsam laborum modi natus non quisquam repellendus vero. Alias at culpa enim ipsum natus officiis sunt. Ad aperiam architecto, aspernatur dolores ex excepturi in magni necessitatibus neque nihil officiis placeat quae quis repudiandae sequi similique, tempore tenetur, unde veniam voluptatum! Corporis eos facilis maxime obcaecati porro quam quidem suscipit tempora tempore.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt dicta doloribus earum eligendi iure minus officiis quo, sit sunt tempora temporibus velit veniam? Amet animi commodi corporis dicta dolor dolorem enim fuga illum magnam maxime obcaecati provident quibusdam quidem quis rem, sapiente sequi voluptatum! Debitis doloremque eum illum ipsam laborum modi natus non quisquam repellendus vero. Alias at culpa enim ipsum natus officiis sunt. Ad aperiam architecto, aspernatur dolores ex excepturi in magni necessitatibus neque nihil officiis placeat quae quis repudiandae sequi similique, tempore tenetur, unde veniam voluptatum! Corporis eos facilis maxime obcaecati porro quam quidem suscipit tempora tempore.</p>
+</body>
+<script>
+    (function () {
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            const button = document.querySelector('.btn-nav');
+            const nav = document.querySelector('.top-nav');
+
+            button.addEventListener('click',function () {
+                nav.classList.toggle('is-active');
+            });
+
+            function raf(fa) {
+                window.requestAnimationFrame(function () {
+                    window.requestAnimationFrame(function () {
+                        fa();
+                    });
+                });
+            }
+        }
+    })();
+</script>
+</html>

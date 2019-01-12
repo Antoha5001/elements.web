@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .grid{
+            display: grid;
+            /*grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));*/
+            /*grid-template-columns:repeat(4, 1fr);*/
+            /*grid-auto-rows: minmax(100px, auto);*/
+            /*grid-auto-columns: 200px;*/
+            grid-gap: 20px;
+            /*grid-auto-flow: column;*/
+            grid-template-areas:
+                    "header"
+                    "aside""article"
+                    "footer";
+
+        }
+        .grid > div{
+            padding: 10px;
+            border: 1px solid #212941;
+            border-radius: 5px;
+            background: #28314e;
+            color: white;
+        }
+        @media (min-width: 640px) {
+            .grid{
+              grid-template-columns: 2fr 4fr;
+                grid-template-areas:
+                        "header header"
+                        "aside article"
+            "aside footer";
+
+            }
+        }
+        header,
+        article,
+        aside,
+        footer{ padding: 10px;
+            border: 1px solid #212941;
+            border-radius: 5px;
+            background: #28314e;
+            color: white;
+        }
+      header{
+          grid-area: header;
+      }
+        article{
+            grid-area: article;
+        }
+        aside{
+            grid-area: aside;
+        }
+        footer{
+            grid-area: footer;
+        }
+    </style>
+
+</head>
+<body>
+<div class="grid">
+    <header>Шапка</header>
+    <article><h1>Заголовок</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci, alias animi et ipsam laudantium, magni non pariatur porro possimus provident quaerat tenetur voluptas. Molestiae?</p>
+    </article>
+    <aside>
+       <p>Сайдбар</p>
+
+    </aside>
+    <footer><p>Подвал</p></footer>
+</div>
+</body>
+</html>

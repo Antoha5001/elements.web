@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+    <style>
+        html{
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            padding: 0;
+            height: 100%;
+            background: #282828;
+            background: linear-gradient(-45deg,#ee7752,#e73c7e,#23a6d5,#23d5ab);
+            -webkit-background-size: 400% 400%;
+            background-size: 400% 400%;
+            animation-name: gradient;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            animation-duration: 15s;
+        }
+        @keyframes gradient {
+            0%{
+                background-position: 0 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+
+                background-position: 0 50%;
+            }
+        }
+        h1 {
+            font-size: 80px;
+            padding-top: 50px;
+            margin-bottom: 0;
+        }
+        p{
+            font-size: 20px;
+        }
+        h1, p{
+
+            text-align: center;
+            color: white;
+            font-weight: lighter;
+        }
+        .media{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-53%, -50%);
+        }
+        .media li{
+            list-style: none;
+            border: 1px solid white;
+            border-radius: 50%;
+            display: inline-block;
+            padding: 20px;
+            color: white;
+            margin: 10px 30px;
+            transition: .3s;
+            cursor: pointer;
+        }
+        .media li:hover{
+
+            transition: .3s;
+            border: 1px solid #282828;
+            color: #282828;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h1>Socialize</h1>
+    <p>Social Media icons with font awesome</p>
+
+    <div class="media">
+        <ul>
+            <li><i class="fab fa-facebook-square"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-github-square"></i></li>
+            <li><i class="fab fa-codepen"></i></li>
+            <li><i class="fab fa-linkedin"></i></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

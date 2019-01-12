@@ -1,0 +1,2 @@
+body{margin:0;padding:0;background:honeydew;border:5px solid red}body *{margin:0;padding:0}header{height:100vh;background-image:url("../images/candy-wallpapers-28220-1611107.jpg");background-size:cover;margin-bottom:50px;display:flex;flex-direction:column;justify-content:center;align-items:center}header ~ p{max-width:600px;margin:0 auto 20px}
+/*# sourceMappingURL=style.css.map */

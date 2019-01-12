@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+        section{
+            width: 100%;
+            height: 100%;
+            background: #95C623;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: absolute;
+        }
+        .wrapper{
+            width: 50%;
+            height: 100%;
+            background: #e55812;
+            overflow: hidden;
+            color: #eaffee;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .sliding{
+            white-space: nowrap;
+            position: absolute;
+            top: 50%;
+            font-size: 12rem;
+            overflow: hidden;
+            line-height: 220px;
+            animation-name: anim;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes anim {
+            0%{
+                transform: translate(0, -50px);
+            }
+            50%{
+                transform: translate(50%, -50px);
+            }
+            100%{
+                transform: translate(0, -50px);
+            }
+        }
+    </style>
+</head>
+<body>
+<section>
+    <span class="sliding">
+        <span>STUDIO</span> <span>WEB</span>
+        <span>DESIGN</span>
+    </span>
+    <div class="wrapper">
+    <span class="sliding">
+        <span>STUDIO</span>
+        <span>WEB</span>
+        <span>DESIGN</span>
+    </span>
+    </div>
+</section>
+</body>
+</html>

@@ -23,7 +23,6 @@
             divAlert.classList.add('fa-leave-active');
 
             raf(function () {
-
                 divAlert.classList.add('fa-leave-active');
                 divAlert.classList.add('fa-leave-to');
                 divAlert.classList.remove('fa-leave');

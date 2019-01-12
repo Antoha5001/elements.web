@@ -1,0 +1,284 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #343233;
+}
+.container{
+    text-align: center;
+    padding: 0 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 580px) {
+    .container{
+        padding: 0 2rem;
+    }
+}
+
+h1, h2, h3{
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 300;
+}
+h1 {
+    font-size: 54px;
+    color: #ffd152;
+}
+h2{
+    font-size: 42px;
+    color: #8d8273;
+}
+h3 {
+    font-size: 28px;
+    color: #8d8273;
+}
+
+h4{
+    font-size: 20px;
+    color: #8d8273;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+p{
+    margin: 20px 0;
+    color: #8d8273;
+    line-height: 24px;
+}
+img{
+    width: 100%;
+    margin: 20px 0;
+}
+button{
+    outline: none;
+    border: none;
+    margin: 18px 0;
+    padding: 20px 40px;
+    background: #ffd152;
+    color: #282627;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+i{
+    font-size: 42px;
+    letter-spacing: 14px;
+}
+
+nav{
+    height: 60px;
+    background: #343233;
+    position: fixed;
+    width: 100%;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    display: inline;
+    float: left;
+}
+nav a{
+    display: inline-block;
+    width: 100px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 0;
+    color: #8d8273;
+    transition: color 1s;
+}
+nav a:hover{
+    color: #6c6c6c;
+}
+
+nav a#nav__button{
+    display: none;
+}
+
+@media (max-width: 580px){
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        border-bottom: 0;
+    }
+
+    nav ul{
+        display: none;
+        height: auto;
+    }
+    nav li{
+        width: 100%;
+        float: left;
+        position: relative;
+        }
+    nav a{
+        text-indent: 25px;
+        width: 100%;
+        text-align: left;
+        background: #282627;
+        color: #8d8273;
+    }
+    nav a:hover{
+        color: #6c6c6c;
+    }
+
+    nav a#nav__button::after{
+        content: '|||';
+        transform: rotate(-90deg);
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        position: absolute;
+        right: 5px;
+        top: 20px;
+    }
+    nav a#nav__button{
+        display: block;
+        background: #282627;
+        color: #8d8273;
+        position: relative;
+        width: 100%;
+    }
+    .top__menu::before, .top__menu::after{
+        content: "";
+        display: table;
+    }
+    .top__menu::after{
+        clear: both;
+    }
+    .top__menu{
+        zoom: 1;
+    }
+}
+
+.section__hero{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+.section__hero .container{
+    margin-top: 34vh;
+}
+.section__hero h2{
+    color: #8d8273;
+}
+
+@media (max-width: 580px){
+
+    .section__hero h2{
+        font-size: 24px;
+    }
+    .section__hero p{
+        display: none;
+    }
+}
+
+#overview{
+    background: #282627;
+    padding: 8rem 0;
+}
+
+.overview-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr) ;
+    grid-gap: 80px;
+    text-align: left;
+}
+
+
+@media (max-width: 580px){
+
+    #overview{
+        background: #282627;
+        padding: 3rem 0;
+    }
+    .overview-content{
+        grid-template-columns: repeat(1,1fr) ;
+        grid-gap: 20px;
+        text-align: left;
+    }
+}
+
+
+
+#about{
+    padding: 8rem 0;
+}
+#about h2{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 12px;
+    margin-bottom: 2em;
+}
+
+#future{
+    background: #282627;
+    padding: 8em 0;
+}
+
+.future-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    grid-gap: 20px;
+}
+
+
+
+@media (max-width: 580px){
+
+    #future{
+        padding: 3rem 0;
+    }
+    .future-content{
+        grid-template-columns: repeat(1,1fr)
+    }
+}
+
+#subscribe{
+
+    background: #343233;
+    padding: 8em 0;
+}
+
+#subscribe h2{
+
+    color: #8d8273;
+}
+#subscribe input{
+    background: none;
+    margin: 2em 0;
+    font-weight: 400;
+    padding: 20px;
+    border: 1px solid #8d8273;
+    width: 80%;
+    outline: none;
+    color: rgb(211, 165, 100);
+}
+#subscribe input:hover{
+    border: 2px solid #8d8273;
+}
+ input::placeholder{
+     color: #8d8273;
+     text-transform: uppercase;
+}
+
+ footer{
+     padding: 1em 0;
+     background: #282627;
+     text-align: center;
+
+ }
+ footer span{
+     color: #8d8273;
+     font-weight: 600;
+ }
