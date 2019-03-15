@@ -26,5 +26,6 @@
     "gulp-util": "^3.0.8",
     "vinyl-ftp": "^0.6.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": "https://github.com/Antoha5001/elements.web.git"
 }
