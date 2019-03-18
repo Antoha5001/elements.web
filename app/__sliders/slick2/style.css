@@ -2,14 +2,14 @@
     padding: 0;
     margin: 0;
 }
-.container {
+.container_my {
     min-width: 320px;
     max-width: 100%;
     padding: 0 0;
     box-sizing: border-box;
     margin: 0 auto;
 }
-.wrap {
+.wrap_my {
 @include min-max(320px, 1200px, 15px);
     min-width: 320px;
     max-width: 1200px;
@@ -71,7 +71,7 @@
 }
 .slick-next{
     z-index: 2;
-    left: 80%;
+    left: calc(70% + 160px);
     background: #951406;
 }
 .slick-next::after{
@@ -85,16 +85,37 @@
 .top-slider_controls{
     position: absolute;
     height: 60px;
-    width: 30%;
-    background: rgba(255,255,255, 1);
+    width: calc(30% - 60px);
+    background-image: inherit;
     right: 0;
     display: flex;
+    bottom: 0;
+    overflow: hidden;
 }
+.top-slider_controls:before{
+    content: "";
+    background-image: inherit;
+    filter: blur(15px) brightness(1.1);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: -30px;
+    bottom: -30px;
+    width: 190%;
+    height: 500px;
+    background-position: 100% 100%;
+}
+/*кнопки*/
 .top-slider ul{
     display: flex;
     position: absolute;
     bottom: 0;
     height: 60px;
+    left:  calc(70% + 60px);
+    z-index: 3;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
 .top-slider ul li{
@@ -104,7 +125,9 @@
     margin: 5px;
     border-radius: 50%;
     border: none;
-    background-color: #0b2e13;
+    background-color: white;
+    transition-duration: 0.3s;
+    transition-property: height, width;
 }
 .top-slider ul li button{
     display: none;
@@ -116,5 +139,7 @@
     /*font-size: 0;*/
 }
 .top-slider ul li.slick-active {
-    background-color: red;
+    background-color: white;
+    width: 8px;
+    height: 8px;
 }

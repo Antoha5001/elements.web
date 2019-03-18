@@ -11,12 +11,12 @@
     </style>
 </head>
 <body>
-<div class="container top-slider_container">
+<div class="container_my top-slider_container">
     <div class="top-slider">
 
         <div class="top-slider_element">
             <div class="top-slider_image top-slider_image__print">
-                <div class="wrap top-slider_wrap">
+                <div class="wrap_my top-slider_wrap">
                     <h2 class="top-slider__title">ОФСЕТНАЯ ПЕЧАТЬ ФОРМАТА А2 <br>
                         НА НЕМЕЦКОМ БОРУДОВАНИИ </h2>
                 </div>
@@ -25,7 +25,7 @@
         </div>
         <div class="top-slider_element">
             <div class="top-slider_image__print">
-                <div class="wrap top-slider_wrap">
+                <div class="wrap_my  top-slider_wrap">
                     <h2 class="top-slider__title">ОФСЕТНАЯ ПЕЧАТЬ ФОРМАТА А222 <br>
                         НА НЕМЕЦКОМ БОРУДОВАНИИ </h2>
                 </div>
