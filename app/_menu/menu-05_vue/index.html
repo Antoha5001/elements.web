@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+        body{
+
+        }
+        nav{
+            background: #00c8ff;
+
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <nav>
+        <transition name="fade" mode="out-in">
+            <i class="material-icons menu" v-if="show" @click="show = !show" key="menu">menu</i>
+            <i class="material-icons clear" v-else @click="show = !show" key="clear">clear</i>
+        </transition>
+        <transition>
+            <ul v-if="show">
+                <li v-for="item in items"><a href="#{{item}}">{{item}}</a></li>
+            </ul>
+        </transition>
+    </nav>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return {
+                items: [
+                   'Home',
+                    'About',
+                    'Map',
+                    'Contacts'
+                ],
+                show: false
+            }
+        },
+
+    });
+</script>
+</body>
+</html>
