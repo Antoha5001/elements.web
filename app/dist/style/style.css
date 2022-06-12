@@ -1,0 +1,8 @@
+:root{
+	--my-blue:#0014A8;
+}
+
+footer {
+	background: var(--my-blue);
+	color: white;
+}
